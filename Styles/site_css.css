@@ -1,0 +1,184 @@
+/* @charset "utf-8"; */
+/* CSS Document */
+
+/* html 
+{
+	background-image: url(../Images/BackgroundImages/White_64.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+}
+ 
+body 
+{
+	margin: 0px;
+	padding: 0px;
+}
+*/
+
+html
+{
+	font-family: "Lucida Sans", sans-serif;
+}
+
+body
+{
+	background-image: url('../BackgroundImages/White_64.jpg');
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: auto;
+}
+
+.h1
+{
+	font-weight:bold;
+	font-size:18px;
+	color:#CCC;
+}
+
+.h2
+{
+	font-weight:bold;
+	font-size:16;
+	color:#999;
+}
+
+.h2 a
+{
+	color:rgb(0, 119, 255);
+	text-decoration: underline;
+}
+
+.h3
+{
+	font-size:18px;
+	color: #CCC;	
+}
+/* .site-header
+{
+	background-image: url('../BackgroundImages/Header_02.jpg');
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+	height: auto;
+} */
+
+*
+{
+	box-sizing: border-box;
+}
+
+[class*="col-"]
+{
+	float: left;
+	padding: 15px;
+	/* border: 1px solid red; */
+}
+
+.col-1 { width: 8.33%; }
+.col-2 { width: 16.66%; }
+.col-3 { width: 25%; }
+.col-4 { width: 33.33%; }
+.col-5 { width: 41.66%; }
+.col-6 { width: 50%; }
+.col-7 { width: 58.33%; }
+.col-8 { width: 66.66%; }
+.col-9 { width: 75%; }
+.col-10 { width: 83.33%; }
+.col-11 { width: 91.66%; }
+.col-12 { width: 100%; }
+
+.col-9 img
+{
+	/* width: 100%; */
+	max-width: 720px;
+	height: auto;
+}
+
+/* .row::after
+{
+	content: "";
+	clear: both;
+	display: table;
+} */
+
+td
+{
+	background-color: transparent;
+	background: transparent;
+}
+
+.site-header
+{
+	background-image: url('../BackgroundImages/Header_02.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: auto;
+}
+
+.site-header li
+{
+	display: inline;
+	list-style-type: none;
+	padding: 10px;
+	font-weight: bold;
+}
+
+.site-header a
+{
+	color: #FFFFFF;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: xx-large;
+	font-variant: small-caps;
+}
+
+#link1 
+{
+	font-family: "Arial Black", Gadget, sans-serif;
+	/* font-size: 24px; */
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	color: rgb(0, 166, 255);
+	text-decoration: underline;
+	/* font-variant: small-caps; */
+}
+
+#link2
+{
+	font-weight:bold;
+	font-size:16;
+	color:rgb(70, 70, 70);
+}
+
+a img /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+{ 
+	border: none;
+	height: auto;
+	max-width: 100%;
+}
+
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link 
+{
+	color:rgb(255, 255, 255);
+	text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+}
+a:visited 
+{
+	color: rgb(255, 255, 255);
+	text-decoration: underline;
+}
+
+a:hover, a:active, a:focus /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+{ 
+	text-decoration: none;
+	color: #00F;
+}
+
+.special-link
+{
+	color:rgb(0, 132, 255);
+}
