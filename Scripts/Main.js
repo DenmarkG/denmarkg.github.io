@@ -10,3 +10,11 @@ function load_header()
     headerParent.appendChild(header);
     console.log('header loaded' + header);
 }
+
+$(document).ready(function()
+{
+    let header = document.getElementById('header');
+    
+    $('#header').load('HTML/Header.html');
+    console.log('header loaded');
+});
