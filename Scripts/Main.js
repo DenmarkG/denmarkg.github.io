@@ -15,6 +15,6 @@ $(document).ready(function()
 {
     let header = document.getElementById('header');
     
-    $('#header').load('HTML/Header.html');
+    $('#header').load('https://superdenny.github.io/HTML/Header.html');
     console.log('header loaded');
 });
