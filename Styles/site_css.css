@@ -1,21 +1,10 @@
 /* @charset "utf-8"; */
 /* CSS Document */
 
-/* html 
+*
 {
-	background-image: url(../Images/BackgroundImages/White_64.jpg);
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-position: center;
-	background-size: cover;
+	box-sizing: border-box;
 }
- 
-body 
-{
-	margin: 0px;
-	padding: 0px;
-}
-*/
 
 html
 {
@@ -24,12 +13,100 @@ html
 
 body
 {
-	background-image: url('../BackgroundImages/White_64.jpg');
+	/* background-image: url('../BackgroundImages/White_64.jpg'); */
+	background-color: white;
 	background-size: contain;
 	background-repeat: no-repeat;
-	width: 100%;
+	width: auto;
 	height: auto;
 }
+
+.button
+{
+	border: transparent;
+	border-radius: 0px;
+}
+
+.grid .site-header
+{
+	display: grid;
+	/* border: 2px blue solid; */
+	grid-template-columns: 50% repeat(5, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+
+}
+
+.site-header
+{
+	text-align: center;
+	grid-row-gap: 20px;
+
+	font-size: 1.5em;
+	font-weight: bold;
+	font-variant: small-caps;
+}
+
+.header-name
+{
+	/* border: 2px red solid; */
+	background-color: #ABD7E4;
+	/* background-image: linear-gradient(#419EC2, #ABD7E4, #419EC2); */
+	padding-left: .5em;
+	color: white;
+	text-align: left;
+	grid-column-end: span 6;
+}
+
+.header-item,
+.header-link
+{
+	grid-row-start: 2;
+	grid-row-end: span 1;
+	width: 100%;
+	background-color: #ABD7E4;
+
+	/* background-image: linear-gradient(#419EC2, #ABD7E4, #419EC2); */
+}
+
+.header-link
+{
+	text-align: center;
+	color: white;
+}
+
+.header-link:hover
+{
+	color:#ABD7E4;	
+}
+
+.button:hover
+{
+	background-color: #FFFFFF;
+	color: #ABD7E4;
+}
+
+.site-header a
+{
+	color: #FFFFFF;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 1.5em;
+}
+
+.site-header a:hover
+{
+	text-decoration: none;
+	color: #ABD7E4;
+}
+
+/* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+a:hover, a:active, a:focus 
+{ 
+	text-decoration: none;
+	color: #ABD7E4;
+}
+
+
+
 
 .h1
 {
@@ -56,18 +133,37 @@ body
 	font-size:18px;
 	color: #CCC;	
 }
-/* .site-header
-{
-	background-image: url('../BackgroundImages/Header_02.jpg');
-	background-position: center;
-	background-size: cover;
-	width: 100%;
-	height: auto;
-} */
 
-*
+
+
+
+
+
+
+
+
+.special-link
 {
-	box-sizing: border-box;
+	color:rgb(0, 132, 255);
+}
+
+#link1 
+{
+	font-family: "Arial Black", Gadget, sans-serif;
+	/* font-size: 24px; */
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	color: rgb(0, 166, 255);
+	text-decoration: underline;
+	/* font-variant: small-caps; */
+}
+
+#link2
+{
+	font-weight:bold;
+	font-size:16;
+	color:rgb(70, 70, 70);
 }
 
 [class*="col-"]
@@ -97,88 +193,9 @@ body
 	height: auto;
 }
 
-/* .row::after
-{
-	content: "";
-	clear: both;
-	display: table;
-} */
 
 td
 {
 	background-color: transparent;
 	background: transparent;
-}
-
-.site-header
-{
-	background-image: url('../BackgroundImages/Header_02.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	height: auto;
-}
-
-.site-header li
-{
-	display: inline;
-	list-style-type: none;
-	padding: 10px;
-	font-weight: bold;
-}
-
-.site-header a
-{
-	color: #FFFFFF;
-	font-family: Tahoma, Geneva, sans-serif;
-	font-size: xx-large;
-	font-variant: small-caps;
-}
-
-#link1 
-{
-	font-family: "Arial Black", Gadget, sans-serif;
-	/* font-size: 24px; */
-	font-style: normal;
-	line-height: normal;
-	font-weight: bold;
-	color: rgb(0, 166, 255);
-	text-decoration: underline;
-	/* font-variant: small-caps; */
-}
-
-#link2
-{
-	font-weight:bold;
-	font-size:16;
-	color:rgb(70, 70, 70);
-}
-
-a img /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
-{ 
-	border: none;
-	height: auto;
-	max-width: 100%;
-}
-
-/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
-a:link 
-{
-	color:rgb(255, 255, 255);
-	text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
-}
-a:visited 
-{
-	color: rgb(255, 255, 255);
-	text-decoration: underline;
-}
-
-a:hover, a:active, a:focus /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
-{ 
-	text-decoration: none;
-	color: #00F;
-}
-
-.special-link
-{
-	color:rgb(0, 132, 255);
 }

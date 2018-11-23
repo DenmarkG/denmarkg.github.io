@@ -4,68 +4,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="Styles/site_css.css"/>
-<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
-<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway"> -->
-
-<!-- <style>
-body,h1 {font-family: "Raleway", sans-serif}
-body, html {height: 100%}
-/* .site-header 
-{
-    background-image: url('BackgroundImages/Header_02.jpg');
-    min-height: 100%;
-    background-position: center;
-    background-size: cover;
-} */
-</style> -->
+<script src="Scripts/Main.js"></script>
 
 <body>
+  <div id="header"></div>
+
+
   <!-- begin .header -->
-  <div align="right" class="site-header">
-      <div align="left" style="margin-left: 15px; color: #FFF; font-variant: small-caps; font-weight: bolder; font-size: 36px">
-        <p>
-          Denmark Gibbs
-        </p>
-      </div>
-
-      <div align = "right" style="margin-right: 15px; color: #FFF; font-variant: small-caps; font-weight: bolder; font-size: 24px">
-        <ul>
-          <li><a href="Pages/Programming.html">Programming</a></li>
-          <li><a href="Pages/Art.html">Art</a></li>
-          <li><a href="Pages/Resume.html">Resume</a></li>
-          <li><a href="Pages/Contact.html">Contact</a></li>
-        </ul>
-    </div>
-  </div>
-  <!-- end .header -->
-
 <!-- 
-  <div class="col-3">
-    <p>
-      Test text
-    </p>
-  </div>
-  <div class="col-9">
-    <p>
-      More awesome text!
-    </p>
-  </div> -->
-  
-  <!-- <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-    <div class="w3-display-topleft w3-padding-large w3-xlarge">
-      Logo
-    </div>
-    <div class="w3-display-middle">
-      <h1 class="w3-jumbo w3-animate-top">COMING SOON</h1>
-      <hr class="w3-border-grey" style="margin:auto;width:40%">
-      <p class="w3-large w3-center">35 days left</p>
-    </div>
-    <div class="w3-display-bottomleft w3-padding-large">
-      Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+  <div class="grid">
+    <div class="site-header">
+        <div class="header-name">
+          <a class="button" href="index.html">Denmark Gibbs</a>
+        </div>
+        
+        <div class="header-item"></div>
+        <a class="header-link button" href="Pages/Programming.html">Programming</a>
+        <a class="header-link button" href="Pages/Art.html">Art</a>
+        <a class="header-link button" href="Pages/Resume.html">Resume</a>
+        <a  class="header-link button"href="Pages/Contact.html">Contact</a>
+        <div class="header-item"></div>
     </div>
   </div> -->
+
+  <!-- end .header -->
 
 </body>
 
-<script src="Scripts/Main.js"></script>
+<script>
+  load_header();
+</script>
+
 </html>

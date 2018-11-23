@@ -1,3 +1,12 @@
 console.log("Main.js loaded");
-console.log("Main.js test");
 
+function load_header()
+{
+    let headerParent = document.getElementById("header");
+
+    let header = document.createElement('object');
+    header.innerHTML = '<object type="text/html" data="HTML/Header.html" ></object>';
+    
+    headerParent.appendChild(header);
+    console.log('header loaded' + header);
+}
