@@ -1,6 +1,6 @@
 console.log("Main.js loaded");
 
-function load_header()
+function loadHeader()
 {
     let headerParent = document.getElementById("header");
 
