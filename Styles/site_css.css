@@ -23,6 +23,7 @@ body
 
 .button
 {
+	background-color: #ABD7E4;
 	border: transparent;
 	border-radius: 0px;
 }
@@ -31,9 +32,8 @@ body
 {
 	display: grid;
 	/* border: 2px blue solid; */
-	grid-template-columns: 50% repeat(5, 1fr);
+	grid-template-columns: repeat(6, 1fr);
 	grid-template-rows: repeat(2, 1fr);
-
 }
 
 .site-header
@@ -43,31 +43,34 @@ body
 
 	font-size: 1.5em;
 	font-weight: bold;
-	font-variant: small-caps;
+	font-variant: small-caps;	
+}
 
+.nav-bar,
+.nav-lead,
+.nav-trail
+{
 	background-color: #ABD7E4;
 }
 
-.header-item,
-.header-link
+
+.nav-bar,
 {
 	grid-row-start: 2;
-	grid-row-end: span 1;
 	width: 100%;
-	background-color: #ABD7E4;
+	
 
 	/* background-image: linear-gradient(#419EC2, #ABD7E4, #419EC2); */
 }
 
-.header-link
+.nav-trail
 {
-	text-align: center;
-	color: white;
+	grid-column-end: span 5;
 }
 
-.header-link:hover
+.nav-lead
 {
-	color:#ABD7E4;	
+	grid-column-end: span 2;
 }
 
 .button:hover
