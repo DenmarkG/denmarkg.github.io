@@ -1,0 +1,35 @@
+*
+{
+	box-sizing: border-box;
+}
+
+.grid .site-header
+{
+	display: grid;
+	/* border: 2px blue solid; */
+	grid-template-columns: 50% repeat(5, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+
+    background-color: #ABD7E4;
+}
+
+.site-header
+{
+	text-align: center;
+	grid-row-gap: 20px;
+
+	font-size: 1.5em;
+	font-weight: bold;
+	font-variant: small-caps;
+}
+
+.button
+{
+	border: transparent;
+	border-radius: 0px;
+}
+
+.button:hover
+{
+	color: white;
+}
