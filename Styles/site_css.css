@@ -19,6 +19,8 @@ body
 	background-repeat: no-repeat;
 	width: auto;
 	height: auto;
+
+	margin-top: 1.25em;
 }
 
 .button
