@@ -33,7 +33,7 @@ body
 	display: grid;
 	/* border: 2px blue solid; */
 	grid-template-columns: repeat(6, 1fr);
-	grid-template-rows: repeat(2, 1fr);
+	grid-template-rows: 1;
 }
 
 .site-header
@@ -56,10 +56,7 @@ body
 
 .nav-bar,
 {
-	grid-row-start: 2;
 	width: 100%;
-	
-
 	/* background-image: linear-gradient(#419EC2, #ABD7E4, #419EC2); */
 }
 
