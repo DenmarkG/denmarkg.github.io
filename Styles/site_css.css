@@ -28,12 +28,31 @@ body
 	border-radius: 0px;
 }
 
-.grid .site-header
+.grid
 {
 	display: grid;
+}
+
+.grid .site-header
+{	
 	/* border: 2px blue solid; */
 	grid-template-columns: repeat(6, 1fr);
 	grid-template-rows: 1;
+}
+
+.grid .art-container
+{
+	width: 100%;
+
+	padding: 1em 3em;
+
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: 1;
+}
+
+.art-container
+{
+	align-content: center;
 }
 
 .site-header
