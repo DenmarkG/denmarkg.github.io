@@ -28,13 +28,10 @@ body
 	border-radius: 0px;
 }
 
-.grid
-{
-	display: grid;
-}
-
 .grid .site-header
 {	
+	display: grid;
+
 	/* border: 2px blue solid; */
 	grid-template-columns: repeat(6, 1fr);
 	grid-template-rows: 1;
@@ -46,6 +43,7 @@ body
 
 	padding: 1em 3em;
 
+	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: 1;
 }
