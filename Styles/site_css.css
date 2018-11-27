@@ -19,7 +19,10 @@ body
 	background-repeat: no-repeat;
 	width: auto;
 	height: auto;
+}
 
+.main-content
+{
 	margin-top: 3em;
 }
 

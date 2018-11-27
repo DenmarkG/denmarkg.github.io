@@ -11,10 +11,33 @@ console.log("Main.js loaded");
 //     console.log('header loaded' + header);
 // }
 
+var header;
+
 $(document).ready(function()
 {
-    let header = document.getElementById('header');
+    header = document.getElementById('header');
     
     $('#header').load('/HTML/Header.html');
     console.log('header loaded');
 });
+
+window.onscroll = stickHeader();
+
+function stickHeader()
+{
+    if (header == null)
+    {
+        header = document.getElementById('header');
+    }
+    
+    let stickPos = header.offsetTop;
+
+    if (window.pageYOffset > stickPos)
+    {
+        header.classList.add("fixed-header");
+    }
+    else
+    {
+        header.classList.remove("sticky-header");
+    }
+}
