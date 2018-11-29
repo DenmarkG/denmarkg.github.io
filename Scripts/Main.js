@@ -37,7 +37,7 @@ function adjustNavBarHeight(headerQuery)
     }
 }
 
-let headerQuery = window.matchMedia("(orientation: landscape)");
+var headerQuery = window.matchMedia("(orientation: landscape)");
 adjustNavBarHeight(headerQuery);
 headerQuery.addListener(adjustNavBarHeight);
 
