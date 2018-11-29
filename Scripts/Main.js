@@ -21,6 +21,27 @@ $(document).ready(function()
     console.log('header loaded');
 });
 
+function adjustNavBarHeight(headerQuery)
+{
+    if (headerQuery.matches)
+    {
+        let bannerHeight = $('.header-image').height();
+        let navBar = document.getElementById('nav-bar');
+        navBar.style.classList.add('mobile-nav');
+        navBar.style.marginTop = bannerHeight;
+    }
+    else
+    {
+        let navBar = document.getElementById('nav-bar');
+        navBar.style.classList.remove('mobile-nav');
+    }
+}
+
+let headerQuery = window.matchMedia("(orientation: landscape)");
+adjustNavBarHeight(headerQuery);
+headerQuery.addListener(adjustNavBarHeight);
+
+
 window.onscroll = stickHeader();
 
 function stickHeader()

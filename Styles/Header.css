@@ -23,3 +23,16 @@
 	width: 100%;
 	margin: -20em 0px;
 }
+
+.mobile-nav
+{
+	margin-top: 1px;
+}
+
+/* @media only screen and (orientation: landscape)
+{
+	.header-image img
+	{
+		margin: -5em 0px;
+	}
+} */
