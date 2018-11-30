@@ -13,14 +13,6 @@ console.log("Main.js loaded");
 
 var header;
 
-$(document).ready(function()
-{
-    header = document.getElementById('header');
-    
-    $('#header').load('/HTML/Header.html');
-    console.log('header loaded');
-});
-
 function adjustNavBarHeight(headerQuery)
 {
     if (headerQuery.matches)
@@ -37,16 +29,7 @@ function adjustNavBarHeight(headerQuery)
     }
 }
 
-var headerQuery = window.matchMedia("(orientation: landscape)");
-$(document).ready(function()
-{
-    adjustNavBarHeight(headerQuery);
-    headerQuery.addListener(adjustNavBarHeight);
-});
-
-
-
-window.onscroll = stickHeader();
+var headerQuery;
 
 function stickHeader()
 {
@@ -66,3 +49,22 @@ function stickHeader()
         header.classList.remove("sticky-header");
     }
 }
+
+function Init()
+{
+    // place the header
+    header = document.getElementById('header');
+
+    $('#header').load('/HTML/Header.html');
+    console.log('header loaded');
+
+    // make sure the navBar stay in place once it reaches the top
+    window.onscroll = stickHeader();
+
+    // Check for landscape or portrait
+    headerQuery = window.matchMedia("(orientation: landscape)");
+    adjustNavBarHeight(headerQuery);
+    headerQuery.addListener(adjustNavBarHeight);
+}
+
+$(document).ready(Init);
