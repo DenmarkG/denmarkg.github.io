@@ -38,8 +38,12 @@ function adjustNavBarHeight(headerQuery)
 }
 
 var headerQuery = window.matchMedia("(orientation: landscape)");
-adjustNavBarHeight(headerQuery);
-headerQuery.addListener(adjustNavBarHeight);
+$(document).ready(function()
+{
+    adjustNavBarHeight(headerQuery);
+    headerQuery.addListener(adjustNavBarHeight);
+});
+
 
 
 window.onscroll = stickHeader();
