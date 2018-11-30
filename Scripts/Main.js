@@ -12,6 +12,7 @@ console.log("Main.js loaded");
 // }
 
 var header;
+var navBar;
 
 function adjustNavBarHeight(headerQuery)
 {
@@ -20,13 +21,13 @@ function adjustNavBarHeight(headerQuery)
         if (headerQuery.matches)
         {
             let bannerHeight = $('.header-image').height();
-            let navBar = header.getElementById('nav-bar');
+            let navBar = header.childNodes[0];
             navBar.style.classList.add('mobile-nav');
             navBar.style.marginTop = bannerHeight;
         }
         else
         {
-            let navBar = header.getElementById('nav-bar');
+            let navBar = header.childNodes[0];
             navBar.style.classList.remove('mobile-nav');
         }
     }
