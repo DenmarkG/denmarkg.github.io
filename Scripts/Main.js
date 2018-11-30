@@ -67,7 +67,7 @@ function Init()
 
     // Check for landscape or portrait
     headerQuery = window.matchMedia("(orientation: landscape)");
-    adjustNavBarHeight(headerQuery);
+    $(adjustNavBarHeight(headerQuery));
     headerQuery.addListener(adjustNavBarHeight);
 }
 
