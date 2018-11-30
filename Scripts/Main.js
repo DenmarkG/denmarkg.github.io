@@ -15,17 +15,20 @@ var header;
 
 function adjustNavBarHeight(headerQuery)
 {
-    if (headerQuery.matches)
+    if (header !== undefined && header !== null)
     {
-        let bannerHeight = $('.header-image').height();
-        let navBar = $(document).getElementById('nav-bar');
-        navBar.style.classList.add('mobile-nav');
-        navBar.style.marginTop = bannerHeight;
-    }
-    else
-    {
-        let navBar = document.getElementById('nav-bar');
-        navBar.style.classList.remove('mobile-nav');
+        if (headerQuery.matches)
+        {
+            let bannerHeight = $('.header-image').height();
+            let navBar = header.getElementById('nav-bar');
+            navBar.style.classList.add('mobile-nav');
+            navBar.style.marginTop = bannerHeight;
+        }
+        else
+        {
+            let navBar = header.getElementById('nav-bar');
+            navBar.style.classList.remove('mobile-nav');
+        }
     }
 }
 
