@@ -22,13 +22,19 @@ function adjustNavBarHeight(headerQuery)
         {
             let bannerHeight = $('.header-image').height();
             let navBar = header.childNodes[0];
-            navBar.style.classList.add('mobile-nav');
-            navBar.style.marginTop = bannerHeight;
+            if (navBar !== undefined && navBar !== null)
+            {
+                navBar.style.classList.add('mobile-nav');
+                navBar.style.marginTop = bannerHeight;
+            }
         }
         else
         {
             let navBar = header.childNodes[0];
-            navBar.style.classList.remove('mobile-nav');
+            if (navBar !== undefined && navBar !== null)
+            {
+                navBar.style.classList.remove('mobile-nav');
+            }
         }
     }
 }
