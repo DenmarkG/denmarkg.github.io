@@ -18,7 +18,7 @@ function adjustNavBarHeight(headerQuery)
     if (headerQuery.matches)
     {
         let bannerHeight = $('.header-image').height();
-        let navBar = document.getElementById('nav-bar');
+        let navBar = $(document).getElementById('nav-bar');
         navBar.style.classList.add('mobile-nav');
         navBar.style.marginTop = bannerHeight;
     }
