@@ -37,7 +37,7 @@ body
 
 	/* border: 2px blue solid; */
 	grid-template-columns: repeat(6, 1fr);
-	grid-template-rows: 1;
+	grid-template-rows: 1fr;
 }
 
 .grid .art-container
@@ -47,7 +47,7 @@ body
 	padding: 1em 3em;
 
 	display: grid;
-	grid-template-rows: 1;
+	grid-template-rows: 1fr;
 }
 
 .art-container
