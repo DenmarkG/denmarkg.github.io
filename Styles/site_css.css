@@ -13,6 +13,9 @@ html
 
 body
 {
+	display: grid;
+	grid-template-columns: 1;
+
 	/* background-image: url('../BackgroundImages/White_64.jpg'); */
 	background-color: white;
 	background-size: contain;
@@ -44,7 +47,6 @@ body
 	padding: 1em 3em;
 
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: 1;
 }
 

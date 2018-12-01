@@ -72,9 +72,9 @@ function Init()
     window.onscroll = stickHeader();
 
     // Check for landscape or portrait
-    headerQuery = window.matchMedia("(orientation: landscape)");
-    $(adjustNavBarHeight(headerQuery));
-    headerQuery.addListener(adjustNavBarHeight);
+    // headerQuery = window.matchMedia("(orientation: landscape)");
+    // $(adjustNavBarHeight(headerQuery));
+    // headerQuery.addListener(adjustNavBarHeight);
 }
 
 $(document).ready(Init);
