@@ -50,6 +50,14 @@ body
 	grid-template-rows: 1fr;
 }
 
+.flex-container
+{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-content: space-between;
+}
+
 .art-container
 {
 	align-content: center;
