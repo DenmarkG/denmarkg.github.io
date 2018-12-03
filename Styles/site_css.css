@@ -13,8 +13,8 @@ html
 
 body
 {
-	display: grid;
-	grid-template-columns: 1;
+	/* display: grid; */
+	/* grid-template-columns: 1; */
 
 	/* background-image: url('../BackgroundImages/White_64.jpg'); */
 	background-color: white;
@@ -41,6 +41,9 @@ body
 	/* border: 2px blue solid; */
 	grid-template-columns: repeat(auto-fill, minmax(300px, 1f));
 	grid-template-rows: 1fr;
+	
+	overflow: hidden;
+	white-space: nowrap;
 }
 
 .grid .art-container
@@ -50,7 +53,7 @@ body
 	padding: 1em 3em;
 
 	display: grid;
-	grid-template-rows: 1fr;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 .flex-container

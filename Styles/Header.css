@@ -14,19 +14,22 @@
 .header-image
 {
 	width: 100%;
-	height: 20em;
+	/* height: 20em; */
+	min-height: 200px;
 	overflow: hidden;
+
+	display: inline-block;
+
+	background-image: linear-gradient(white, #ABD7E4);
+
+	text-align: center;
+	color: #ABD7E4;
 }
 
 .header-image img
 {
 	width: 100%;
 	margin: -20em 0px;
-}
-
-.mobile-nav
-{
-	margin-top: 1px;
 }
 
 /* @media only screen and (orientation: landscape)

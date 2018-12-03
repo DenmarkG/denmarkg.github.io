@@ -65,7 +65,7 @@ function Init()
     // place the header
     header = document.getElementById('header');
 
-    $('#header').load('../HTML/Header.html');
+    $('#header').load('/HTML/Header.html');
     console.log('header loaded');
 
     // make sure the navBar stay in place once it reaches the top
