@@ -21,9 +21,7 @@
 	/* height: 20em; */
 	min-height: 200px;
 	overflow: hidden;
-
-	display: inline-block;
-
+	
 	background-image: linear-gradient(white, #ABD7E4);
 
 	text-align: center;
