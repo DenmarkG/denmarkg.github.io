@@ -66,6 +66,14 @@ body
 	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
+.grid .art-gallery
+{
+	display: grid;
+	width: 100%;
+
+	grid-template-columns: repeat((auto-fill, minmax(500px, 1fr)));
+}
+
 .flex-container
 {
 	display: flex;
@@ -81,8 +89,9 @@ body
 
 .art-container img
 {
-	max-width: 200px;
-	max-height: 200px;
+	min-width: 200px;
+	max-width: 100%;
+	height: auto;
 	object-fit: cover;
 }
 
