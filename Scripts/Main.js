@@ -1,5 +1,7 @@
 console.log("Main.js loaded");
 
+var loaded = false;
+
 // function loadHeader()
 // {
 //     let headerParent = document.getElementById("header");
@@ -75,6 +77,11 @@ function Init()
     // headerQuery = window.matchMedia("(orientation: landscape)");
     // $(adjustNavBarHeight(headerQuery));
     // headerQuery.addListener(adjustNavBarHeight);
+
+    loaded = true;
 }
 
-$(document).ready(Init);
+if (!laoded)
+{
+    $(document).ready(Init);    
+}
