@@ -70,7 +70,7 @@ function Init()
     console.log('header loaded');
 
     // make sure the navBar stay in place once it reaches the top
-    window.onscroll = stickNavBar();
+    $(window.onscroll = stickNavBar());
 
     // Check for landscape or portrait
     // headerQuery = window.matchMedia("(orientation: landscape)");

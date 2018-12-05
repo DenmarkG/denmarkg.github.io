@@ -69,9 +69,13 @@ body
 .grid .art-gallery
 {
 	display: grid;
-	width: 100%;
-
 	grid-template-columns: repeat((auto-fill, minmax(500px, 1fr)));
+}
+
+.art-container img
+{
+	max-width: 100%;
+	min-width: 300px;
 }
 
 .flex-container
