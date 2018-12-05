@@ -81,7 +81,7 @@ function Init()
     loaded = true;
 }
 
-if (!laoded)
+if (!loaded)
 {
     $(document).ready(Init);    
 }
