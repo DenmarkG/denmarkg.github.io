@@ -5,8 +5,6 @@
 
 .fixed-header
 {
-	height: 3em;
-	width: 100%;
 	position: fixed;
 	top: 0;
 }

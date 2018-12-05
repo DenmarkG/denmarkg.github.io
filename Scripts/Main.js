@@ -43,22 +43,21 @@ function adjustNavBarHeight(headerQuery)
 
 var headerQuery;
 
-function stickHeader()
+function stickNavBar()
 {
-    if (header == null)
-    {
-        header = document.getElementById('header');
-    }
+    let nav = document.getElementById('nav');
     
-    let stickPos = header.offsetTop;
+    let stickPos = nav.offsetTop;
 
     if (window.pageYOffset > stickPos)
     {
-        header.classList.add("fixed-header");
+        nav.classList.add('fixed-header');
+        console.log('header stuck!');
     }
     else
     {
-        header.classList.remove("sticky-header");
+        nav.classList.remove('fixed-header');
+        console.log('header unstuck!');
     }
 }
 
@@ -71,7 +70,7 @@ function Init()
     console.log('header loaded');
 
     // make sure the navBar stay in place once it reaches the top
-    window.onscroll = stickHeader();
+    window.onscroll = stickNavBar();
 
     // Check for landscape or portrait
     // headerQuery = window.matchMedia("(orientation: landscape)");
