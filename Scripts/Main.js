@@ -16,48 +16,51 @@ var loaded = false;
 var header;
 var navBar;
 
-function adjustNavBarHeight(headerQuery)
-{
-    if (header !== undefined && header !== null)
-    {
-        if (headerQuery.matches)
-        {
-            let bannerHeight = $('.header-image').height();
-            let navBar = header.childNodes[0];
-            if (navBar !== undefined && navBar !== null)
-            {
-                navBar.style.classList.add('mobile-nav');
-                navBar.style.marginTop = bannerHeight;
-            }
-        }
-        else
-        {
-            let navBar = header.childNodes[0];
-            if (navBar !== undefined && navBar !== null)
-            {
-                navBar.style.classList.remove('mobile-nav');
-            }
-        }
-    }
-}
+// function adjustNavBarHeight(headerQuery)
+// {
+//     if (header !== undefined && header !== null)
+//     {
+//         if (headerQuery.matches)
+//         {
+//             let bannerHeight = $('.header-image').height();
+//             let navBar = header.childNodes[0];
+//             if (navBar !== undefined && navBar !== null)
+//             {
+//                 navBar.style.classList.add('mobile-nav');
+//                 navBar.style.marginTop = bannerHeight;
+//             }
+//         }
+//         else
+//         {
+//             let navBar = header.childNodes[0];
+//             if (navBar !== undefined && navBar !== null)
+//             {
+//                 navBar.style.classList.remove('mobile-nav');
+//             }
+//         }
+//     }
+// }
 
 var headerQuery;
 
 function stickNavBar()
 {
-    let nav = document.getElementById('nav');
+    let nav = $('nav');
     
-    let stickPos = nav.offsetTop;
+    if (nav !== undefined && nav != null)
+    {
+        let stickPos = nav.offsetTop;
 
-    if (window.pageYOffset > stickPos)
-    {
-        nav.classList.add('fixed-header');
-        console.log('header stuck!');
-    }
-    else
-    {
-        nav.classList.remove('fixed-header');
-        console.log('header unstuck!');
+        if (window.pageYOffset > stickPos)
+        {
+            nav.classList.add('fixed-header');
+            console.log('header stuck!');
+        }
+        else
+        {
+            nav.classList.remove('fixed-header');
+            console.log('header unstuck!');
+        }
     }
 }
 
@@ -70,7 +73,7 @@ function Init()
     console.log('header loaded');
 
     // make sure the navBar stay in place once it reaches the top
-    $(window.onscroll = stickNavBar());
+    window.onscroll = stickNavBar();
 
     // Check for landscape or portrait
     // headerQuery = window.matchMedia("(orientation: landscape)");
