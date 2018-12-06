@@ -66,16 +66,16 @@ body
 	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
-.grid .art-gallery
+.art-gallery
 {
 	display: grid;
+	width: 100%;
 	grid-template-columns: repeat((auto-fill, minmax(500px, 1fr)));
 }
 
-.art-container img
+.art-gallery img
 {
-	max-width: 100%;
-	min-width: 300px;
+	object-fit: cover;
 }
 
 .flex-container
@@ -93,10 +93,11 @@ body
 
 .art-container img
 {
-	min-width: 200px;
 	max-width: 100%;
+	min-width: 200px;
 	height: auto;
 	object-fit: cover;
+	float: left;
 }
 
 .nav-bar,
