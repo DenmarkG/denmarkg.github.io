@@ -45,7 +45,7 @@ var headerQuery;
 
 function stickNavBar()
 {
-    let nav = $('nav');
+    let nav = $('nav')[0];
     
     if (nav !== undefined && nav != null)
     {
@@ -53,12 +53,12 @@ function stickNavBar()
 
         if (window.pageYOffset > stickPos)
         {
-            nav.classList.add('fixed-header');
+            nav.addClass('fixed-header');
             console.log('header stuck!');
         }
         else
         {
-            nav.classList.remove('fixed-header');
+            nav.removeClass('fixed-header');
             console.log('header unstuck!');
         }
     }

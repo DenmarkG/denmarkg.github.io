@@ -6,6 +6,11 @@
 	box-sizing: border-box;
 }
 
+canvas
+{
+	border: 1px solid red;
+}
+
 html
 {
 	font-family: "Lucida Sans", sans-serif;

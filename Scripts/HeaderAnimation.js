@@ -1,0 +1,92 @@
+// HeaderAnimation.js
+// Author: Denmark Gibbs
+
+function Vector(x, y) 
+{
+    this.x = x;
+    this.y = y;
+}
+
+// var canvas = document.querySelector('canvas');
+var canvas = $('canvas')[0];
+canvas.width = window.innerWidth;
+canvas.height = 200;
+
+var cxt = canvas.getContext('2d');
+
+var innerWidth = window.innerWidth;
+var innerHeight = window.innerHeight;
+
+function Circle(xPos, yPos, radius)
+{
+    this.pos = new Vector(xPos, yPos);
+
+    this.radius = radius;
+
+    this.dir = new Vector(1, 1);
+
+    this.update = function()
+    {
+        if ((this.pos.x + this.radius) > innerWidth || this.pos.x - this.radius < 0)
+        {
+            this.dir.x = -this.dir.x;
+        }
+
+        let h = this.pos.y + this.radius;
+        console.log('height: ${h}. innerHeight: ${innerHeight}')
+
+        if ((this.pos.y + this.radius) > canvas.height || this.pos.y - this.radius < 0) 
+        {
+            this.dir.y = -this.dir.y;
+            console.log('here');
+        }
+
+        this.pos.x += this.dir.x;
+        this.pos.y += this.dir.y;
+
+        this.draw();
+    }
+
+    this.draw = function()
+    {
+        cxt.beginPath();
+        cxt.arc(this.pos.x, this.pos.y, this.radius, 0, Math.PI * 2, false);
+        cxt.strokeStyle = '#419EC2';
+        cxt.fillStyle = '#419EC2';
+        cxt.stroke();
+        cxt.fill();
+
+        // console.log('drawing');
+    }
+}
+
+var mCircle = new Circle(100, 100, 30);
+
+// function updateCirclePos(event)
+// {
+//     mCircle.pos.x = event.x;
+//     mCircle.pos.y = event.y;
+// }
+
+// window.addEventListener('mousemove', updateCirclePos);
+
+var xPos = 0;
+
+function animate()
+{
+    requestAnimationFrame(animate);
+    cxt.clearRect(0, 0, canvas.width, canvas.height);
+
+    mCircle.update();
+
+    // console.log(mCircle);
+}
+
+function initHeader()
+{
+    animate();
+}
+
+$(document).ready(initHeader);
+
+
