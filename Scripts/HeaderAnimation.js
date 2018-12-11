@@ -9,13 +9,14 @@ function Vector(x, y)
 
 // var canvas = document.querySelector('canvas');
 var canvas = $('canvas')[0];
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+var innerWidth = $(window).width();
+var innerHeight = $(window).height();
+
+canvas.width = $(window).width();
+canvas.height = $(window).height();
 
 var cxt = canvas.getContext('2d');
 
-var innerWidth = $(window).width();
-var innerHeight = $(window).height();
 
 function Circle(xPos, yPos, radius)
 {
