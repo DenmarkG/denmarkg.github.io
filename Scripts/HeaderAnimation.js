@@ -10,15 +10,16 @@ function Vector(x, y)
 // var canvas = document.querySelector('canvas');
 var canvas = $('canvas')[0];
 canvas.width = window.innerWidth;
-canvas.height = 200;
+canvas.height = window.innerHeight;
 
 var cxt = canvas.getContext('2d');
 
-var innerWidth = window.innerWidth;
-var innerHeight = window.innerHeight;
+var innerWidth = $(window).width();
+var innerHeight = $(window).height();
 
 function Circle(xPos, yPos, radius)
 {
+    this.speed = 5;
     this.pos = new Vector(xPos, yPos);
 
     this.radius = radius;
@@ -27,22 +28,25 @@ function Circle(xPos, yPos, radius)
 
     this.update = function()
     {
+        innerWidth = $(window).width();
+        innerHeight = $(window).height();
+
         if ((this.pos.x + this.radius) > innerWidth || this.pos.x - this.radius < 0)
         {
             this.dir.x = -this.dir.x;
         }
 
         let h = this.pos.y + this.radius;
-        console.log('height: ${h}. innerHeight: ${innerHeight}')
+        // console.log('height: ${h}. innerHeight: ${innerHeight}')
 
         if ((this.pos.y + this.radius) > canvas.height || this.pos.y - this.radius < 0) 
         {
             this.dir.y = -this.dir.y;
-            console.log('here');
+            // console.log('here');
         }
 
-        this.pos.x += this.dir.x;
-        this.pos.y += this.dir.y;
+        this.pos.x += this.dir.x * this.speed;
+        this.pos.y += this.dir.y * this.speed;
 
         this.draw();
     }
@@ -70,6 +74,17 @@ var mCircle = new Circle(100, 100, 30);
 
 // window.addEventListener('mousemove', updateCirclePos);
 
+function onResize(event)
+{
+    let x = $(window).width();
+    let y = $(window).height();
+
+    canvas.width = x;
+    canvas.height = y;
+}
+
+
+
 var xPos = 0;
 
 function animate()
@@ -85,6 +100,7 @@ function animate()
 function initHeader()
 {
     animate();
+    window.addEventListener('resize', onResize);
 }
 
 $(document).ready(initHeader);
