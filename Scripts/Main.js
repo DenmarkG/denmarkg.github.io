@@ -64,6 +64,21 @@ function stickNavBar()
     }
 }
 
+function expandInfo()
+{
+    let moreText = this.getElementById('read-more');
+    
+    if (moreText.style.display === "none")
+    {
+        moreText.style.display = "inline";
+    }
+    else
+    {
+        moreText.style.display = "none";
+    }
+
+}
+
 function Init()
 {
     // place the header

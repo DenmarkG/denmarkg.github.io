@@ -1,22 +1,19 @@
 // HeaderAnimation.js
 // Author: Denmark Gibbs
 
+// forward declarations:
+var canvas = $('canvas')[0];
+var innerWidth = $(window).width();
+const heightPercent = .15;
+var innerHeight = $(window).height() * heightPercent;
+var cxt = canvas.getContext('2d');
+var mCircle;
+
 function Vector(x, y) 
 {
     this.x = x;
     this.y = y;
 }
-
-// var canvas = document.querySelector('canvas');
-var canvas = $('canvas')[0];
-var innerWidth = $(window).width();
-var innerHeight = $(window).height();
-
-canvas.width = $(window).width();
-canvas.height = $(window).height();
-
-var cxt = canvas.getContext('2d');
-
 
 function Circle(xPos, yPos, radius)
 {
@@ -60,46 +57,35 @@ function Circle(xPos, yPos, radius)
         cxt.fillStyle = '#419EC2';
         cxt.stroke();
         cxt.fill();
-
-        // console.log('drawing');
     }
 }
-
-var mCircle = new Circle(100, 100, 30);
-
-// function updateCirclePos(event)
-// {
-//     mCircle.pos.x = event.x;
-//     mCircle.pos.y = event.y;
-// }
-
-// window.addEventListener('mousemove', updateCirclePos);
 
 function onResize(event)
 {
     let x = $(window).width();
-    let y = $(window).height();
+    let y = $(window).height() * heightPercent;
 
     canvas.width = x;
     canvas.height = y;
 }
 
-
-
-var xPos = 0;
-
 function animate()
 {
     requestAnimationFrame(animate);
-    cxt.clearRect(0, 0, canvas.width, canvas.height);
-
-    mCircle.update();
-
-    // console.log(mCircle);
+    if (cxt != undefined && cxt != null)
+    {
+        cxt.clearRect(0, 0, canvas.width, canvas.height);
+        mCircle.update();
+    }
 }
 
 function initHeader()
 {
+    canvas.width = $(window).width();
+    canvas.height = $(window).height();
+
+    mCircle = new Circle(100, 100, 30);
+
     animate();
     window.addEventListener('resize', onResize);
 }

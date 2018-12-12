@@ -173,7 +173,10 @@ a:hover, a:active, a:focus
 }
 
 
-
+#read-more
+{
+	display: none;
+}
 
 .h1
 {
