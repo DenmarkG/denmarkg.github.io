@@ -122,6 +122,12 @@ h1
 	float: left;
 }
 
+.art-container img:hover
+{
+	/* change to finger over images to appear as pointer */
+	cursor: pointer;
+}
+
 .nav-bar,
 .nav-lead,
 .nav-trail

@@ -66,18 +66,50 @@ function stickNavBar()
 
 function expandInfo()
 {
-    let moreText = this.getElementById('read-more');
-    
-    if (moreText.style.display === "none")
-    {
-        moreText.style.display = "inline";
-    }
-    else
-    {
-        moreText.style.display = "none";
-    }
+    console.log('clicked!');
 
+    let moreText = $(this).getElementById('.read-more');
+    if (moreText[0] != undefined && moreText[0] != null)
+    {
+        if (moreText[0].style.display === "none")
+        {
+            moreText[0].style.display = "inline";
+        }
+        else
+        {
+            moreText[0].style.display = "none";
+        }
+    }
 }
+
+// find each read-more element and add this function to the image
+// follow this example
+// $( "li" ).addClass( "bar" );
+// $("div").children(".selected").css("color", "blue");
+
+function SetUpExpansions()
+{
+    // get each div that is a child of art-container
+    let divs = $('.art-container').children('div');
+
+    for (i = 0; i < divs.length; ++i)
+    {
+        console.log(divs[i]);
+
+        // find the image
+        let coverImage = divs.children('img');
+        console.log(coverImage);
+
+        // find the span
+        let moreInfo = divs.children('#read-more');
+        console.log(moreInfo);
+
+        // add the onlick function to the image
+        coverImage[0].addEventListener('click', expandInfo);
+    }
+}
+
+
 
 function Init()
 {
@@ -94,6 +126,10 @@ function Init()
     // headerQuery = window.matchMedia("(orientation: landscape)");
     // $(adjustNavBarHeight(headerQuery));
     // headerQuery.addListener(adjustNavBarHeight);
+
+    // TODO: insert read-more stuff here
+    SetUpExpansions();
+
 
     loaded = true;
 }
