@@ -179,7 +179,7 @@ a:hover, a:active, a:focus
 }
 
 
-#read-more
+.read-more
 {
 	display: none;
 }

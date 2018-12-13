@@ -2,11 +2,11 @@
 // Author: Denmark Gibbs
 
 // forward declarations:
-var canvas = $('canvas')[0];
+var canvas;
 var innerWidth = $(window).width();
 const heightPercent = .15;
 var innerHeight = $(window).height() * heightPercent;
-var cxt = canvas.getContext('2d');
+var cxt;
 var mCircle;
 
 function Vector(x, y) 
@@ -84,6 +84,8 @@ function initHeader()
     canvas.width = $(window).width();
     canvas.height = $(window).height() * heightPercent;
 
+    cxt = canvas.getContext('2d');
+
     let circleRadius = 30;
     let startX = Math.floor(Math.random() * (canvas.width - circleRadius)) + circleRadius;
     let startY = Math.floor(Math.random() * (canvas.height - circleRadius)) + circleRadius;
@@ -94,6 +96,11 @@ function initHeader()
     window.addEventListener('resize', onResize);
 }
 
-$(document).ready(initHeader);
+canvas = $('canvas')[0];
+if (canvas != undefined && canvas != null)
+{
+    $(document).ready(initHeader);
+}
+
 
 

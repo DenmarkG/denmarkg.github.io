@@ -70,7 +70,7 @@ function expandInfo(event)
     console.log(event);
 
     let coverImage = event.path[0];
-    let moreText = coverImage.parentElement.querySelector('#read-more');
+    let moreText = coverImage.parentElement.querySelector('.read-more');
 
     if (moreText != undefined && moreText != null)
     {
@@ -114,18 +114,13 @@ function SetUpExpansions()
 
         // find the image
         let coverImage = divs.children('img');
-        console.log(coverImage);
-
-        // find the span
-        let moreInfo = divs.children('#read-more');
-        console.log(moreInfo);
+        let moreText = divs.find('.read-more');
+        moreText[i].style.display = 'none';
 
         // add the onlick function to the image
-        coverImage[0].addEventListener('click', expandInfo);
+        coverImage[i].addEventListener('click', expandInfo);
     }
 }
-
-
 
 function Init()
 {
@@ -136,7 +131,8 @@ function Init()
     console.log('header loaded');
 
     // make sure the navBar stay in place once it reaches the top
-    window.onscroll = stickNavBar();
+    // window.onscroll = stickNavBar;
+    $(window)[0].addEventListener('scroll', stickNavBar);
 
     // Check for landscape or portrait
     // headerQuery = window.matchMedia("(orientation: landscape)");
