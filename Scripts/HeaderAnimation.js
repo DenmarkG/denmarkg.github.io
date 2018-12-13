@@ -82,9 +82,13 @@ function animate()
 function initHeader()
 {
     canvas.width = $(window).width();
-    canvas.height = $(window).height();
+    canvas.height = $(window).height() * heightPercent;
 
-    mCircle = new Circle(100, 100, 30);
+    let circleRadius = 30;
+    let startX = Math.floor(Math.random() * (canvas.width - circleRadius)) + circleRadius;
+    let startY = Math.floor(Math.random() * (canvas.height - circleRadius)) + circleRadius;
+
+    mCircle = new Circle(startX, startY, 30);
 
     animate();
     window.addEventListener('resize', onResize);
