@@ -64,22 +64,38 @@ function stickNavBar()
     }
 }
 
-function expandInfo()
+function expandInfo(event)
 {
     console.log('clicked!');
+    console.log(event);
 
-    let moreText = $(this).getElementById('.read-more');
-    if (moreText[0] != undefined && moreText[0] != null)
+    let coverImage = event.path[0];
+    let moreText = coverImage.parentElement.querySelector('#read-more');
+
+    if (moreText != undefined && moreText != null)
     {
-        if (moreText[0].style.display === "none")
+        if (moreText.style.display === 'none')
         {
-            moreText[0].style.display = "inline";
+            moreText.style.display = 'inline';
         }
         else
         {
-            moreText[0].style.display = "none";
+            moreText.style.display = 'none';
         }
     }
+
+    // let moreText = $(this).getElementById('.read-more');
+    // if (moreText[0] != undefined && moreText[0] != null)
+    // {
+    //     if (moreText[0].style.display === "none")
+    //     {
+    //         moreText[0].style.display = "inline";
+    //     }
+    //     else
+    //     {
+    //         moreText[0].style.display = "none";
+    //     }
+    // }
 }
 
 // find each read-more element and add this function to the image
