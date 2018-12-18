@@ -111,6 +111,15 @@ h1
 .art-container
 {
 	align-content: center;
+	grid-template-columns: 2fr;
+}
+
+.art-container div
+{
+	/* draw out this grid before continuing */
+
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
 }
 
 .art-container img
@@ -126,6 +135,15 @@ h1
 {
 	/* change to finger over images to appear as pointer */
 	cursor: pointer;
+}
+
+#trailer
+{
+	width:100%;
+	height:100%;
+	/* float: none;  */
+	margin: 2em auto;
+	display: none;
 }
 
 .nav-bar,

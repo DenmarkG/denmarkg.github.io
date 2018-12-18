@@ -66,21 +66,36 @@ function stickNavBar()
 
 function expandInfo(event)
 {
-    console.log('clicked!');
-    console.log(event);
+    // console.log('clicked!');
+    // console.log(event);
 
     let coverImage = event.path[0];
     let moreText = coverImage.parentElement.querySelector('.read-more');
 
     if (moreText != undefined && moreText != null)
     {
+        let trailer = moreText.querySelector('#trailer');
+
         if (moreText.style.display === 'none')
         {
             moreText.style.display = 'inline';
+            console.log('text on');
+
+            if (trailer != undefined && trailer != null)
+            {
+                trailer.style.display = 'inline';
+                console.log('trailer on');
+            }
         }
         else
         {
             moreText.style.display = 'none';
+
+            if (trailer != undefined && trailer != null)
+            {
+                trailer.style.display = 'none';
+                console.log('trailer on');
+            }
         }
     }
 
@@ -110,7 +125,7 @@ function SetUpExpansions()
 
     for (i = 0; i < divs.length; ++i)
     {
-        console.log(divs[i]);
+        // console.log(divs[i]);
 
         // find the image
         let coverImage = divs.children('img');
@@ -127,7 +142,7 @@ function Init()
     // place the header
     header = document.getElementById('header');
 
-    $('#header').load('/HTML/Header.html');
+    // $('#header').load('/HTML/Header.html');
     console.log('header loaded');
 
     // make sure the navBar stay in place once it reaches the top

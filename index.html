@@ -22,7 +22,27 @@
       </div>
     </div> -->
 
-    <div id="header"></div>
+    <div id="header">
+      <div class="header-image">
+        <canvas></canvas>
+      </div>
+    
+      <!-- https://www.w3schools.com/howto/howto_js_sticky_header.asp -->
+    
+      <div id="nav" class="site-header">
+        <!-- <a class="button" href="/index.html">Denmark Gibbs</a> -->
+        <a class="button" href="/index.html">
+          <img src="/Images/HomeButton.jpg">
+        </a>
+        <a class="button" href="/Pages/Programming.html">Programming</a>
+        <a class="button" href="/Pages/Art.html">Art</a>
+        <a class="button" href="/Pages/Resume.html">Resume</a>
+        <a class="button" href="/Pages/Contact.html">Contact</a>
+      </div>
+    
+      <!-- end .header -->
+      
+    </div>
 
     <div id="AboutMe">
       <h1>
@@ -54,6 +74,7 @@
             <p>
               <span class="read-more">
                 Here is more info on The Walking Dead: The Final Season.
+                <embed id="trailer" src="https://youtu.be/4whlGmkTge0">
               </span>
             </p>
           </div>
@@ -93,10 +114,11 @@
     </div>
 
     <script src="/jquery-3.3.1.js"></script>
+    <script src="/Scripts/HeaderAnimation.js"></script>
+    <script>initHeader()</script>
     <script src="/Scripts/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"crossorigin="anonymous"></script>
     <script src="/Styles/Bootstrap/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"crossorigin="anonymous"></script>
     <script src="/Scripts/Main.js"></script>
-    <script src="/Scripts/HeaderAnimation.js"></script>
   </body>
 
 

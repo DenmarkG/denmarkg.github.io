@@ -12,7 +12,28 @@
     </head>
 
     <body>
-        <div id="header"></div>
+            <div id="header">
+                <div class="header-image">
+                    <canvas></canvas>
+                </div>
+            
+                <!-- https://www.w3schools.com/howto/howto_js_sticky_header.asp -->
+            
+                <div id="nav" class="site-header">
+                    <!-- <a class="button" href="/index.html">Denmark Gibbs</a> -->
+                    <a class="button" href="/index.html">
+                        <img src="/Images/HomeButton.jpg">
+                    </a>
+                    <a class="button" href="/Pages/Programming.html">Programming</a>
+                    <a class="button" href="/Pages/Art.html">Art</a>
+                    <a class="button" href="/Pages/Resume.html">Resume</a>
+                    <a class="button" href="/Pages/Contact.html">Contact</a>
+                </div>
+            
+                <!-- end .header -->
+                <script src="/Scripts/HeaderAnimation.js"></script>
+                <script>initHeader()</script>
+            </div>
 
         <div class="container">
         <div class="content" align="left" style="margin-top: 32px;">
