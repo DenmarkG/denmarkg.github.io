@@ -74,7 +74,7 @@ function expandInfo(event)
 
     if (moreText != undefined && moreText != null)
     {
-        let trailer = moreText.querySelector('#trailer');
+        let trailer = coverImage.parentElement.querySelector('#trailer');
 
         if (moreText.style.display === 'none')
         {
@@ -94,7 +94,7 @@ function expandInfo(event)
             if (trailer != undefined && trailer != null)
             {
                 trailer.style.display = 'none';
-                console.log('trailer on');
+                console.log('trailer off');
             }
         }
     }

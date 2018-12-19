@@ -8,6 +8,9 @@ const heightPercent = .15;
 var innerHeight = $(window).height() * heightPercent;
 var cxt;
 var mCircle;
+var mCircles = [];
+var mCircleRadius = 15;
+var mCircleInitialVelocity = 1;
 
 function Vector(x, y) 
 {
@@ -17,7 +20,7 @@ function Vector(x, y)
 
 function Circle(xPos, yPos, radius)
 {
-    this.speed = 5;
+    this.speed = mCircleInitialVelocity;
     this.pos = new Vector(xPos, yPos);
 
     this.radius = radius;
@@ -75,8 +78,19 @@ function animate()
     if (cxt != undefined && cxt != null)
     {
         cxt.clearRect(0, 0, canvas.width, canvas.height);
-        mCircle.update();
+        // mCircle.update();
+
+        let numCircles = mCircles.length;
+        for (i = 0; i < numCircles; ++i)
+        {
+            mCircles[i].update();
+        }
     }
+}
+
+function GetRandomInBounds(radius)
+{
+    return Math.floor(Math.random() * (canvas.width - radius)) + radius;
 }
 
 function initHeader()
@@ -86,12 +100,16 @@ function initHeader()
 
     cxt = canvas.getContext('2d');
 
-    let circleRadius = 30;
-    let startX = Math.floor(Math.random() * (canvas.width - circleRadius)) + circleRadius;
-    let startY = Math.floor(Math.random() * (canvas.height - circleRadius)) + circleRadius;
+    let startX = Math.floor(Math.random() * (canvas.width - mCircleRadius)) + mCircleRadius;
+    let startY = Math.floor(Math.random() * (canvas.height - mCircleRadius)) + mCircleRadius;
 
-    mCircle = new Circle(startX, startY, 30);
+    mCircle = new Circle(startX, startY, mCircleRadius);
+    mCircles.push(mCircle);
 
+    startX = GetRandomInBounds(mCircleRadius);
+    startY = GetRandomInBounds(mCircleRadius);
+    mCircles.push(new Circle(startX, startY, mCircleRadius));
+    
     animate();
     window.addEventListener('resize', onResize);
 }
