@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+</head>
+
+	<div id="header">
+      <div class="header-image">
+        <canvas></canvas>
+      </div>
+    
+      <!-- https://www.w3schools.com/howto/howto_js_sticky_header.asp -->
+    
+      <div id="nav" class="site-header">
+        <!-- <a class="button" href="/index.html">Denmark Gibbs</a> -->
+        <a class="button" href="/index.html">
+          <img src="/Images/HomeButton.jpg">
+        </a>
+        <a class="button" href="/Pages/Programming.html">Programming</a>
+        <a class="button" href="/Pages/Art.html">Art</a>
+        <a class="button" href="/Pages/Resume.html">Resume</a>
+        <a class="button" href="/Pages/Contact.html">Contact</a>
+      </div>
+    
+      <!-- end .header -->
+      
+    </div>
+	
+<body>
+</body>
+</html>
