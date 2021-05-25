@@ -74,7 +74,7 @@ nav
 	{
 		position: absolute;
 		right: 0px;
-		height: 92vh;
+		height: 100%;
 		top: 8vh;
 		background-color: #ABD7E4;
 		display: flex;
