@@ -7,8 +7,8 @@
 
 .column
 {
-    flex: 25%;
-    max-width: 25%;
+    flex: 50%;
+    max-width: 50%;
     padding: 0 4px;
 }
 
