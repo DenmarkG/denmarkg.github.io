@@ -63,7 +63,7 @@ nav
 	transition: all 0.3s ease;
 }
 
-@media screen and (max-width:768px)
+@media only screen and (max-width:768px)
 {
 	body
 	{
@@ -77,11 +77,11 @@ nav
 		height: 100%;
 		top: 8vh;
 		background-color: #ABD7E4;
-		display: flex;
+		display: none;
 		flex-direction: column;
 		align-items: center;
-		width: 45%;
-		transform: translateX(100%);
+		width: 100%;
+		opacity: 0;
 		transition: transform 0.5s ease-in;
 	}
 
@@ -98,6 +98,8 @@ nav
 
 	.nav-active
 	{
+		opacity: 1;
+		display: flex;
 		transform: translateX(0%);
 	}
 }
