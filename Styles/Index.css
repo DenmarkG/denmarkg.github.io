@@ -26,6 +26,7 @@
     padding: 20px;
     justify-content: space-around;
     position: relative;
+    align-items: center;
 }
 
 .project img
@@ -35,6 +36,9 @@
     transition: .5s ease;
     backface-visibility: hidden;
     height:auto;
+    max-width: 250px;
+    max-height: 250px;
+    object-fit: cover;
 }
 
 .overlay
@@ -45,6 +49,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .project:hover img
@@ -61,6 +66,12 @@
 {
     background-color:#B2733D;
     color:#3F200C
+}
+
+.text-Terminator
+{
+    background-color: #AB9988;
+    color: #D6234A;
 }
 
 @media screen and (max-width:768px)
