@@ -17,9 +17,6 @@
     align-items: center;
     position: relative;
     flex-grow: 1;
-
-    display: flex;
-    flex-direction: column;
 }
 
 .card-text
@@ -78,7 +75,7 @@
 
 @media screen and (max-width:768px)
 {
-    .column
+    .card
     {
         flex: 100%;
         max-width: 100%;
