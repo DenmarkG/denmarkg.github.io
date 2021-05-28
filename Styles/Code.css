@@ -1,0 +1,41 @@
+*
+{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+.title
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1em;
+    padding-bottom: 2em;
+}
+
+.title img
+{
+    max-width: 50%;
+    position: relative;
+    left: 25%;
+    padding: 1em;
+}
+
+.projects
+{
+    display: grid;
+    grid-template-columns: 10% 1fr 1fr 10%;
+    align-items: center;
+}
+
+.projects .description
+{
+    grid-column: 2/3;
+}
+
+.projects .art
+{
+    grid-column: 3/4;
+}

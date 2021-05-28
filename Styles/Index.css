@@ -9,7 +9,6 @@
 
 .card
 {
-    /* object-fit: cover; */
     padding: 20px;
     text-align: center;
     max-width: 25%;
@@ -50,10 +49,13 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    font-family: 'Sigmar One', cursive;
+    font-family: 'Nanum Gothic Coding', monospace;
+    color: rgb(255, 255, 255);
+    background-color: #628A96;
+    font-size: 1.5em;
 }
 
-.project:hover img
+.card:hover img
 {
     opacity: 0.3;
 }
@@ -63,14 +65,12 @@
     opacity: 1;
 }
 
-
-
 .text
 {
     background-color: #ABD7E4;
     color: rgb(255, 255, 255);
     text-shadow: 1px 1px 2px #628A96;
-    /* font-family: 'Nanum Gothic Coding', monospace; */
+    
 }
 
 @media screen and (max-width:768px)
