@@ -11,10 +11,11 @@ nav
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	height: 8vh;
+	height: 10vh;
 	background-color: #ABD7E4;
-	font-family: 'Poppins', sans-serif;
+	font-weight: bold;
 	z-index: 2;
+	font-size: 1.25em;
 }
 
 .logo
@@ -22,7 +23,7 @@ nav
 	color: rgb(255, 255, 255);
 	text-transform: uppercase;
 	letter-spacing: 5px;
-	font-size: 20px;
+	font-size: 1.75em;
 }
 
 .nav-links
@@ -44,8 +45,6 @@ nav
 	color:rgb(255, 255, 255);
 	text-decoration: none;
 	letter-spacing: 3px;
-	font-size: 16px;
-	font-weight: bold;
 	transition: all .5s;
 	position: relative;
 }
