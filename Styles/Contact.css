@@ -1,0 +1,32 @@
+.container
+{
+    margin: 2em;
+    position: absolute;
+    left: 25%;
+    display: flex;
+    width: 50%;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contact
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contact-title
+{
+    background-color: #ABD7E4;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.contact a
+{
+    text-decoration: none;
+    
+}

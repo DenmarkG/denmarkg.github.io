@@ -27,15 +27,67 @@
 {
     display: grid;
     grid-template-columns: 10% 1fr 1fr 10%;
-    align-items: center;
+    align-items: top;
 }
 
-.projects .description
+h2
+{
+    background-color: #ABD7E4;
+    text-align: center;
+}
+
+h2 a 
+{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.description
 {
     grid-column: 2/3;
+    margin-right: 1em;
 }
 
-.projects .art
+.art
 {
     grid-column: 3/4;
+}
+
+.art img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-height: 400px;
+}
+
+.video
+{
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9, for an aspect ratio of 1:1 change to this value to 100% */ 
+}
+
+iframe
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (max-width:768px)
+{
+    .projects
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: top;
+        padding: 2em;
+        justify-content: space-around;
+    }
+    .description
+    {
+        margin-top: 1em;
+    }
 }
