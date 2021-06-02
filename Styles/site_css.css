@@ -100,7 +100,7 @@ nav
 	{
 		position: absolute;
 		right: 0px;
-		height: 100%;
+		height: 100vh;
 		top: 8vh;
 		background-color: #ABD7E4;
 		display: none;
@@ -127,6 +127,13 @@ nav
 		opacity: 1;
 		display: flex;
 		transform: translateX(0%);
+		justify-content:unset;
+	}
+
+	.nav-active li
+	{
+		margin-bottom: 2em;
+		margin-top: 2em;
 	}
 }
 
@@ -143,7 +150,10 @@ nav
 	transform: rotate(45deg) translate(-5px, -6px);
 }
 
-
+.lock
+{
+	overflow-y: hidden;
+}
 
 @keyframes navLinkFade 
 {

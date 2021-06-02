@@ -7,6 +7,8 @@ function navSlide()
     // Toggle Nav
     burger.addEventListener('click', () => 
     {
+        // Lock scroll
+        document.body.classList.toggle('lock');
         nav.classList.toggle('nav-active');
 
         // Animate Links
@@ -21,6 +23,7 @@ function navSlide()
                 link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + .5}s`
             }
         });
+
 
         // Burger Animation
         burger.classList.toggle('burger-toggle');

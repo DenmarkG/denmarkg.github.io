@@ -11,8 +11,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 1em;
-    padding-bottom: 2em;
+    margin: 2em;
+}
+
+.title h1
+{
+    text-align: center;
 }
 
 .title img
