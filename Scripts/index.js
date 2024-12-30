@@ -29,6 +29,7 @@ function navSlide()
     });
 }
 
+const modal = document.querySelector('.modal');
 let modalText = "";
 let shippedTitles = [];
 
@@ -45,28 +46,14 @@ function hideModal(modal)
 
 function initModal()
 {
-    const modal = document.querySelector('.modal');
-    const cards = document.querySelectorAll('.card');
-
     modal.onclick = function()
     {
         hideModal(modal);
     };
-
-    cards.forEach((card, index) => 
-    {
-        card.onclick = function()
-        {
-            let modalText = modal.querySelector('#modalText');
-            modalText.innerHTML = shippedTitles[index].Title;
-            showModal(modal);
-        };
-    });
 }
 
-async function loadData()
+async function loadJsonFile(url)
 {
-    const url = './Data/Shipped.json';
     try 
     {
         const response = await fetch(url);
@@ -78,14 +65,77 @@ async function loadData()
         const json = await response.json();
         console.log(json);
 
-        for (let i in json.titles) 
-        {
-            shippedTitles.push(json.titles[i]);
-        } 
-    } 
+        return json
+    }
     catch (error) 
     {
         console.error(error.message);
+    }
+}
+
+async function loadHtmlFile(url) 
+{
+    try 
+    {
+        const response = await fetch(url);
+        if (!response.ok) 
+        {
+            throw new Error(`Response status: ${response.status}`);
+        }
+
+        const txt = await response.text();
+        console.log(txt);
+
+        return txt;
+    }
+    catch (error) 
+    {
+        console.error(error.message);
+    }
+}
+
+function setupCardHtml(txt, cardData)
+{
+    let div = document.createElement('div');
+    div.classList.add("card");
+    div.innerHTML = txt;
+
+    // The title image
+    let img = div.querySelector("#cardImage");
+    img.src = cardData.Img;
+
+    // The title text
+    let cardText = div.querySelector('#name');
+    const br = "<br />";
+    cardText.innerHTML = cardData.Name + br + cardData.Subtitle;
+
+    // The overlay text
+    let overlay = div.querySelector("#company");
+    overlay.innerHTML = cardData.Company + br + cardData.Year;
+
+    // Add the onclick
+    div.onclick = function() 
+    {
+        let modalText = modal.querySelector('#modalText');
+        modalText.innerHTML = cardData.Name;
+        showModal(modal);
+    };
+
+    return div;
+}
+
+async function loadData()
+{
+    const titleCardHtml = "./HTML/TitleCard.html";
+    let txt = await loadHtmlFile(titleCardHtml);
+    
+    let titleCards = document.querySelector("#titles");
+    const shippedTitlesJson = './Data/Shipped.json';
+    let json = await loadJsonFile(shippedTitlesJson);
+    for (let i in json.titles) 
+    {
+        shippedTitles.push(json.titles[i]);
+        titleCards.appendChild(setupCardHtml(txt, shippedTitles[i]));
     }
 }
 

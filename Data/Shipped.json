@@ -1,33 +1,45 @@
 {
     "titles": [
         {
-            "Title": "NFL Pro Era",
+            "Name": "NFL Pro Era",
+            "Subtitle": "Series",
             "Company": "StatusPro",
+            "Year": 2022,
             "Img": "/Images/BoxArt/ProEra.jpg"
         },
         {
-            "Title": "Harry Potter: Wizards Unite",
+            "Name": "Harry Potter:",
+            "Subtitle": "Wizards Unite",
             "Company": "WB Games SF",
+            "Year": 2019,
             "Img": "/Images/BoxArt/hpwu-keyart.jpg"
         },
         {
-            "Title": "The Walking Dead: The Final Season",
+            "Name": "The Walking Dead",
+            "Subtitle": "The Final Season",
             "Company": "Telltale Games",
+            "Year": 2018,
             "Img": "/Images/BoxArt/TTGWalkingDeadFinalSeason_500.jpg"
         },
         {
-            "Title": "The Walking Dead: Complete Collection",
+            "Name": "The Walking Dead:",
+            "Subtitle": "Complete Collection",
             "Company": "Telltale Games",
+            "Year": 2017,
             "Img": "/Images/BoxArt/TTGWalkingDeadCollection.jpg"
         },
         {
-            "Title": "Minecraft: Story Mode",
+            "Name": "Minecraft",
+            "Subtitle": "Story Mode",
             "Company": "Telltale Games",
+            "Year": 2017,
             "Img": "/Images/BoxArt/TTGMinecraftStoryMode2.jpg"
         },
         {
-            "Title": "Terminator Genisys: Revolution",
+            "Name": "Terminator Genisys",
+            "Subtitle": "Revolution",
             "Company": "Glu",
+            "Year": 2015,
             "Img": "/Images/BoxArt/TerminatorGenisysRevolution.png"
         }
     ]
