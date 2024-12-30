@@ -21,6 +21,7 @@
 .card-text
 {
     flex: 25%;
+    border-radius: 15px;
 }
 
 .card div 
@@ -38,6 +39,7 @@
     height:auto;
     object-fit: cover;
     width: 100%;
+    border-radius: 15px;
 }
 
 .overlay
@@ -53,6 +55,7 @@
     color: rgb(255, 255, 255);
     background-color: #628A96;
     font-size: 1.5em;
+    cursor: pointer;
 }
 
 .card:hover img
@@ -65,12 +68,50 @@
     opacity: 1;
 }
 
+.modal
+{
+    display: none;
+    margin: auto;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    top: 0;
+}
+
+.modal div
+{
+    text-align: center;
+    vertical-align: middle;
+    margin: auto;
+}
+
+.modal-content
+{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+
+    background-color: #628A96;
+    color: white;
+    height: 80%;
+    width: 50%;
+    text-align: center;
+    vertical-align: middle;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
 .text
 {
     background-color: #ABD7E4;
     color: rgb(255, 255, 255);
     text-shadow: 1px 1px 2px #628A96;
-    
+    border-radius: 15px;   
 }
 
 @media screen and (max-width:768px)

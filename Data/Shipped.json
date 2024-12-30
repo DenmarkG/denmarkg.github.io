@@ -1,0 +1,34 @@
+{
+    "titles": [
+        {
+            "Title": "NFL Pro Era",
+            "Company": "StatusPro",
+            "Img": "/Images/BoxArt/ProEra.jpg"
+        },
+        {
+            "Title": "Harry Potter: Wizards Unite",
+            "Company": "WB Games SF",
+            "Img": "/Images/BoxArt/hpwu-keyart.jpg"
+        },
+        {
+            "Title": "The Walking Dead: The Final Season",
+            "Company": "Telltale Games",
+            "Img": "/Images/BoxArt/TTGWalkingDeadFinalSeason_500.jpg"
+        },
+        {
+            "Title": "The Walking Dead: Complete Collection",
+            "Company": "Telltale Games",
+            "Img": "/Images/BoxArt/TTGWalkingDeadCollection.jpg"
+        },
+        {
+            "Title": "Minecraft: Story Mode",
+            "Company": "Telltale Games",
+            "Img": "/Images/BoxArt/TTGMinecraftStoryMode2.jpg"
+        },
+        {
+            "Title": "Terminator Genisys: Revolution",
+            "Company": "Glu",
+            "Img": "/Images/BoxArt/TerminatorGenisysRevolution.png"
+        }
+    ]
+}
