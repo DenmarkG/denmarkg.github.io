@@ -1,3 +1,6 @@
+const addEmbedMedia = true;
+const kDataFolder = './Data/'
+
 function navSlide()
 {
     const burger = document.querySelector('.burger');
@@ -75,6 +78,7 @@ async function loadJsonFile(url)
 
 async function loadHtmlFile(url) 
 {
+    console.log('Loading file ' + url);
     try 
     {
         const response = await fetch(url);
@@ -94,7 +98,7 @@ async function loadHtmlFile(url)
     }
 }
 
-function setupCardHtml(txt, cardData)
+async function setupCardHtml(txt, cardData)
 {
     let div = document.createElement('div');
     div.classList.add("card");
@@ -113,6 +117,13 @@ function setupCardHtml(txt, cardData)
     let overlay = div.querySelector("#company");
     overlay.innerHTML = cardData.Company + br + cardData.Year;
 
+    
+    let mediaText = '';
+    if ((addEmbedMedia == true) && (cardData.Media != null))
+    {
+        mediaText = await loadHtmlFile(kDataFolder + cardData.Media);
+    }
+
     // Add the onclick
     div.onclick = function() 
     {
@@ -125,20 +136,9 @@ function setupCardHtml(txt, cardData)
             child = modalText.lastElementChild;
         }
 
-        modalText.innerHTML = cardData.Name;
+        modalText.innerHTML = cardData.Name + br + cardData.Subtitle;
         modalText.innerHTML += br;
-
-        if (cardData.Media != null) 
-        {
-            console.log(cardData.Media);
-            let media = document.createElement(cardData.Media.Type);
-            for (let key in cardData.Media.Attributes)
-            {
-                media.setAttribute(key, cardData.Media.Attributes[key]);
-            }
-            
-            modalText.appendChild(media);
-        }
+        modalText.innerHTML += mediaText;
         
         showModal(modal);
     };
@@ -157,7 +157,8 @@ async function loadData()
     for (let i in json.titles) 
     {
         shippedTitles.push(json.titles[i]);
-        titleCards.appendChild(setupCardHtml(txt, shippedTitles[i]));
+        let card = await setupCardHtml(txt, shippedTitles[i]);
+        titleCards.appendChild(card);
     }
 }
 

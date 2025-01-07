@@ -5,7 +5,8 @@
             "Subtitle": "Series",
             "Company": "StatusPro",
             "Year": 2022,
-            "Img": "/Images/BoxArt/ProEra.jpg"
+            "Img": "/Images/BoxArt/ProEra.jpg",
+            "Media": "ProEra.html"
         },
         {
             "Name": "Harry Potter:",
@@ -13,49 +14,39 @@
             "Company": "WB Games SF",
             "Year": 2019,
             "Img": "/Images/BoxArt/hpwu-keyart.jpg",
-            "Media":
-            { 
-                "Type" : "iframe",
-                "Attributes":
-                {
-                    "type": "iframe",
-                    "src": "https: //www.youtube.com/embed/E2xoJVqZZOA?si=mU1kP3prnH4uWdBo",
-                    "height": 560,
-                    "width": 315,
-                    "title": "YouTube video player",
-                    "frameborder":  0,
-                    "allow": "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
-                    "referrerpolicy": "strict-origin-when-cross-origin"
-                }
-            }
+            "Media": "Potter.html"
         },
         {
             "Name": "The Walking Dead",
             "Subtitle": "The Final Season",
             "Company": "Telltale Games",
             "Year": 2018,
-            "Img": "/Images/BoxArt/TTGWalkingDeadFinalSeason_500.jpg"
+            "Img": "/Images/BoxArt/TTGWalkingDeadFinalSeason_500.jpg",
+            "Media": "WalkingDead.html"
         },
         {
             "Name": "The Walking Dead:",
             "Subtitle": "Complete Collection",
             "Company": "Telltale Games",
             "Year": 2017,
-            "Img": "/Images/BoxArt/TTGWalkingDeadCollection.jpg"
+            "Img": "/Images/BoxArt/TTGWalkingDeadCollection.jpg",
+            "Media": "Collection.html"
         },
         {
             "Name": "Minecraft",
             "Subtitle": "Story Mode",
             "Company": "Telltale Games",
             "Year": 2017,
-            "Img": "/Images/BoxArt/TTGMinecraftStoryMode2.jpg"
+            "Img": "/Images/BoxArt/TTGMinecraftStoryMode2.jpg",
+            "Media": "Minecraft.html"
         },
         {
             "Name": "Terminator Genisys",
             "Subtitle": "Revolution",
             "Company": "Glu",
             "Year": 2015,
-            "Img": "/Images/BoxArt/TerminatorGenisysRevolution.png"
+            "Img": "/Images/BoxArt/TerminatorGenisysRevolution.png",
+            "Media": "Terminator.html"
         }
     ]
 }
