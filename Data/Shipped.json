@@ -12,7 +12,20 @@
             "Subtitle": "Wizards Unite",
             "Company": "WB Games SF",
             "Year": 2019,
-            "Img": "/Images/BoxArt/hpwu-keyart.jpg"
+            "Img": "/Images/BoxArt/hpwu-keyart.jpg",
+            "Media": 
+            [
+                {
+                    "type": "iframe",
+                    "src": "https: //www.youtube.com/embed/E2xoJVqZZOA?si=mU1kP3prnH4uWdBo",
+                    "height": 560,
+                    "width": 315,
+                    "title": "YouTube video player",
+                    "frameborder":  0,
+                    "allow": "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+                    "referrerpolicy": "strict-origin-when-cross-origin"
+                }
+            ]
         },
         {
             "Name": "The Walking Dead",
