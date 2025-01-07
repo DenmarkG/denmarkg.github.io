@@ -13,8 +13,10 @@
             "Company": "WB Games SF",
             "Year": 2019,
             "Img": "/Images/BoxArt/hpwu-keyart.jpg",
-            "Media": 
-            [
+            "Media":
+            { 
+                "Type" : "iframe",
+                "Attributes":
                 {
                     "type": "iframe",
                     "src": "https: //www.youtube.com/embed/E2xoJVqZZOA?si=mU1kP3prnH4uWdBo",
@@ -25,7 +27,7 @@
                     "allow": "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
                     "referrerpolicy": "strict-origin-when-cross-origin"
                 }
-            ]
+            }
         },
         {
             "Name": "The Walking Dead",

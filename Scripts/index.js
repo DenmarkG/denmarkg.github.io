@@ -117,7 +117,29 @@ function setupCardHtml(txt, cardData)
     div.onclick = function() 
     {
         let modalText = modal.querySelector('#modalText');
+
+        let child = modalText.lastElementChild;
+        while (child)
+        {
+            modalText.removeChild(child);
+            child = modalText.lastElementChild;
+        }
+
         modalText.innerHTML = cardData.Name;
+        modalText.innerHTML += br;
+
+        if (cardData.Media != null) 
+        {
+            console.log(cardData.Media);
+            let media = document.createElement(cardData.Media.Type);
+            for (let key in cardData.Media.Attributes)
+            {
+                media.setAttribute(key, cardData.Media.Attributes[key]);
+            }
+            
+            modalText.appendChild(media);
+        }
+        
         showModal(modal);
     };
 
