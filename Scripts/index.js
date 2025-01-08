@@ -111,6 +111,9 @@ async function setupCardHtml(txt, cardData)
     // The title text
     let cardText = div.querySelector('#name');
     const br = "<br />";
+
+
+    // cardText.appendChild(header); 
     cardText.innerHTML = cardData.Name + br + cardData.Subtitle;
 
     // The overlay text
@@ -136,9 +139,18 @@ async function setupCardHtml(txt, cardData)
             child = modalText.lastElementChild;
         }
 
-        modalText.innerHTML = cardData.Name + br + cardData.Subtitle;
+        modalText.innerHTML = "";
+
+        let header = document.createElement('h1');
+        header.innerHTML = cardData.Name + br + cardData.Subtitle;
+
+        modalText.appendChild(header);
+
         modalText.innerHTML += br;
-        modalText.innerHTML += mediaText;
+
+        let description = document.createElement('h4');
+        description.innerHTML = mediaText;
+        modalText.appendChild(description);
         
         showModal(modal);
     };
