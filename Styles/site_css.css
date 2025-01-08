@@ -6,16 +6,24 @@
 	font-family: 'Poppins', sans-serif;
 }
 
-nav
+.main
+{
+	margin-top: 10vh;
+}
+
+.nav
 {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	height: 10vh;
+	width: 100%;
 	background-color: #ABD7E4;
 	font-weight: bold;
 	z-index: 2;
 	font-size: 1.25em;
+	position: fixed;
+	top: 0;
 }
 
 .logo

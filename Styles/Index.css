@@ -127,4 +127,14 @@ iframe
         flex: 100%;
         max-width: 100%;
     }
+
+    .modal
+    {
+        position: absolute;
+    }
+
+    .modal-content
+    {
+        height: auto;
+    }
 }

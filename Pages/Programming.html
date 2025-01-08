@@ -11,13 +11,14 @@
     </head>
 
     <body>
-        <nav>
+        <div class="nav">
             <div class="logo">
                 Denmark Gibbs
             </div>
             <ul class="nav-links">
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/Pages/Programming.html" class="active-page">Code</a></li>
+                <!-- #DG: Make header spacing consistent -->
+                <li><a href="/index.html" class="active-page">Home</a></li>
+                <li><a href="/Pages/Programming.html">Code</a></li>
                 <li><a href="/Pages/Art.html">Art</a></li>
                 <li><a href="/Pages/Contact.html">Contact</a></li>
                 <!-- <li><a href="#">Tutorials</a></li> -->
@@ -27,96 +28,92 @@
                 <div class="line2"></div>
                 <div class="line3"></div>
             </div>
-        </nav>
-
-        <div class="title">
-            <h1>Code Projects and Game Demos</h1>
-            Full source code and additional projects and be found on my GitHub
-            <a href="http://www.github.com/DenmarkG" target="blank"><img src="../SocialNets/github-logo.png" alt="Github" title="Github" /></a>
         </div>
-        
 
-        <!-- #DG: Make spacing consistent -->
-        <div class="projects">
-            <div class="description">
-                <h2><a href="https://github.com/Superdenny/EazyCam" target="_blank" id="link2">Eazy Camera</a></h2>
-                <p>
-                    Eazy Cam solves the problem of not having an intuitive, plug-and-play third-person camera solution for Unity. <br />
-                    It handles expected behaviors such as movement and collision for action/adventure style games. <br /><br />
-                    Eazy Cam is currently available on the Unity Asset Store<br />
-                    <!-- #DG: Add Hyperlink here -->
-                </p>
-                Source code can be found <a href="https://github.com/Superdenny/EazyCam" target="_blank" id="link1">here</a>
-                </p>
+        <div class="main">
+            <div class="title">
+                <h1>Code Projects and Game Demos</h1>
+                Full source code and additional projects and be found on my GitHub
+                <a href="http://www.github.com/DenmarkG" target="blank"><img src="../SocialNets/github-logo.png" alt="Github" title="Github" /></a>
             </div>
-            <div class="video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/H9uCr7mRwFc?rel=0" frameborder="0"
-                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-
-            <!-- BEGIN VETCTOR INTERCEPT -->
-            <div class="description">
-                <h2 class="paragraph">
-                    <a href="VectorIntercept/index.html" target="_blank" id="link2">Vector Interception</a>
-                </h2>
-                <p>
-                    A once-failed interview question turned into a playable demo. 
-                    <br /><br />
-                    
-                    The problem was to solve for hitting a moving target with a projectile that could only be launched at fixed speed.
-                    <br /><br />
-
-                    Click the left mouse button to fire a ball. If it can be hit, a second ball
-                    will be fired from the center of the screen.
-                    <br /><br />
-
-                    ***Due to ever-changing web technology, this demo may not work in all browsers.***
-                </p>
-                <br />
-                Source code can be found <a href="https://github.com/Superdenny/VectorInterception" target="_blank"
-                    id="link1">here</a>
-                </p>
-            </div>
-            <div class="art">
-                <a href="VectorIntercept/index.html" target="_blank"><img src="VectorIntercept/Intercept.jpg"
-                        alt="Vector Intercetption" title="Vector Interception" /></a>
-            </div>
-
-            <!-- BEGIN Delivery Boy -->
-            <!-- <div class="description">
-                <h2>
-                    <a href="../Pages/DeliveryBoy/index.html" target="_blank" id="link2">Delivery Boy</a></h2>
-                    <p> 
-                        This is a collection of gameplay features I developed as part of my thesis project at the Academy of Art University
-                        using Unity. In this project, I've created a 3rd person camera system, Day/Night cycle with transitioning skybox,
-                        dialog system, locomotion system with animations, and a simple mission system. 
-                    </p>
-                    <br />
-                    <p> 
-                        This updated version also features a basic AI and Time Scaling ability. The Stalkers (the Ai Agents) follow a set of
-                        waypoints, but will attack the player if he gets too close. Once the player is out of sight, they will continue
-                        wandering. 
-                    </p>
-                    <br />
+            
+            <!-- #DG: Make spacing consistent -->
+            <div class="projects">
+                <div class="description">
+                    <h2><a href="https://github.com/Superdenny/EazyCam" target="_blank" id="link2">Eazy Camera</a></h2>
                     <p>
-                        For a detailed list of controls, press the spacebar to pause the game. 
+                        Eazy Cam solves the problem of not having an intuitive, plug-and-play third-person camera solution for Unity. <br />
+                        It handles expected behaviors such as movement and collision for action/adventure style games. <br /><br />
+                        Eazy Cam is currently available on the Unity Asset Store<br />
+                        <!-- #DG: Add Hyperlink here -->
                     </p>
+                    Source code can be found <a href="https://github.com/Superdenny/EazyCam" target="_blank" id="link1">here</a>
+                    </p>
+                </div>
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/H9uCr7mRwFc?rel=0" frameborder="0"
+                        allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <!-- BEGIN VETCTOR INTERCEPT -->
+                <div class="description">
+                    <h2 class="paragraph">
+                        <a href="VectorIntercept/index.html" target="_blank" id="link2">Vector Interception</a>
+                    </h2>
+                    <p>
+                        A once-failed interview question turned into a playable demo.
+                        <br /><br />
+            
+                        The problem was to solve for hitting a moving target with a projectile that could only be launched at fixed speed.
+                        <br /><br />
+                        Click the left mouse button to fire a ball. If it can be hit, a second ball
+                        will be fired from the center of the screen.
+                        <br /><br />
+                        ***Due to ever-changing web technology, this demo may not work in all browsers.***
+                    </p>
+                    <br />
+                    Source code can be found <a href="https://github.com/Superdenny/VectorInterception" target="_blank"
+                        id="link1">here</a>
+                    </p>
+                </div>
+                <div class="art">
+                    <a href="VectorIntercept/index.html" target="_blank"><img src="VectorIntercept/Intercept.jpg"
+                            alt="Vector Intercetption" title="Vector Interception" /></a>
+                </div>
+                <!-- BEGIN Delivery Boy -->
+                <!-- <div class="description">
+                    <h2>
+                        <a href="../Pages/DeliveryBoy/index.html" target="_blank" id="link2">Delivery Boy</a></h2>
+                        <p>
+                            This is a collection of gameplay features I developed as part of my thesis project at the Academy of Art University
+                            using Unity. In this project, I've created a 3rd person camera system, Day/Night cycle with transitioning skybox,
+                            dialog system, locomotion system with animations, and a simple mission system.
+                        </p>
+                        <br />
+                        <p>
+                            This updated version also features a basic AI and Time Scaling ability. The Stalkers (the Ai Agents) follow a set of
+                            waypoints, but will attack the player if he gets too close. Once the player is out of sight, they will continue
+                            wandering.
+                        </p>
+                        <br />
+                        <p>
+                            For a detailed list of controls, press the spacebar to pause the game.
+                        </p>
+                </div>
+                <div class="art">
+                    <a href="../Pages/DeliveryBoy/index.html" target="_blank"><img src="../Pages/DeliveryBoy/DeliveryBoy.png" alt="DeliveryBoy" title="DeliveryBoy" /></a>
+                </div> -->
+                <!-- BEGIN INVERT -->
+                <!-- <div class="description">
+                    <h2 class="paragraph"><a href="FlashGame/InVert.html" target="_blank" id="link2">Invert</a></h2>
+                    <p>
+                        A simple vertical scrolling shooter developed in flash as part of a class project at the Academy of Art University.
+                        All art, design, and gameplay programming was done by me.
+                    </p>
+                </div>
+                <div class="art">
+                    <a href="FlashGame/InVert.html" target="_blank"><img src="FlashGame/Invert_Gameplay.jpg" alt="Flash Game" title="Invert"  /></a>
+                </div> -->
             </div>
-            <div class="art">
-                <a href="../Pages/DeliveryBoy/index.html" target="_blank"><img src="../Pages/DeliveryBoy/DeliveryBoy.png" alt="DeliveryBoy" title="DeliveryBoy" /></a>
-            </div> -->
-
-            <!-- BEGIN INVERT -->
-            <!-- <div class="description">
-                <h2 class="paragraph"><a href="FlashGame/InVert.html" target="_blank" id="link2">Invert</a></h2>
-                <p>
-                    A simple vertical scrolling shooter developed in flash as part of a class project at the Academy of Art University.
-                    All art, design, and gameplay programming was done by me.
-                </p>
-            </div>
-            <div class="art">
-                <a href="FlashGame/InVert.html" target="_blank"><img src="FlashGame/Invert_Gameplay.jpg" alt="Flash Game" title="Invert"  /></a>
-            </div> -->
         </div>
 
             <!--Firefight -->
