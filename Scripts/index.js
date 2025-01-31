@@ -1,6 +1,7 @@
 const addEmbedMedia = true;
 const kDataFolder = './Data/'
 
+
 function navSlide()
 {
     const burger = document.querySelector('.burger');
