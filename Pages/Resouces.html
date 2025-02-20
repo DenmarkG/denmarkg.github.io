@@ -13,13 +13,118 @@
     <link rel="stylesheet" href="/Styles/site_css.css" type="text/css" />
     <link rel="stylesheet" href="/Styles/Index.css" type="text/css" />
 </head>
-<body>
+<body onload="PR.prettyPrint()">
     <div id="Header">
-        Temp
+    </div>
+    
+    <div class="main-centered">
+        <div class="code">
+            <div class="code-header">
+                <div class="code-caption">
+                    Convert user movement into local camera space, Mario 64 style.
+                </div>
+            </div>
+            <div class="code-content">
+                <pre class="prettyprint">
+                public static Vector3 ConvertMoveInputToCameraSpace(Transform cameraTransform, float horz, float vert)
+                {
+                    float moveX = (horz * cameraTransform.right.x) + (vert * cameraTransform.forward.x);
+                    float moveZ = (horz * cameraTransform.right.z) + (vert * cameraTransform.forward.z);
+                    return new Vector3(moveX, 0f, moveZ);
+                }
+                </pre>
+            </div>
+
+            <div class="code-header">
+                <div class="code-caption">
+                    A fixed-size, enumerable, Circular Buffer in C#
+                </div>
+            </div>
+            <div class="code-content">
+                <pre class="prettyprint">
+                    public class CircularBuffer<T> : IEnumerable
+                    {
+                        public struct CircularBufferEnumerator : IEnumerator<T>
+                        {
+                            private CircularBuffer<T> _buffer;
+                            private int _currentIndex;
+                            
+                            public T Current => _buffer[_currentIndex];
+                            object IEnumerator.Current => _buffer[_currentIndex];
+                
+                            public CircularBufferEnumerator(CircularBuffer<T> circularBuffer)
+                            {
+                                _buffer = circularBuffer;
+                                _currentIndex = -1;
+                            }
+            
+                            public void Dispose()
+                            {
+                                _buffer = null;
+                                System.GC.SuppressFinalize(this);
+                            }
+            
+                            public bool MoveNext()
+                            {
+                                ++_currentIndex;
+                                return !(_currentIndex >= _buffer.Capacity);
+                            }
+            
+                            public void Reset()
+                            {
+                                _currentIndex = -1;
+                            }
+                        }
+                
+                        public int Count { get; private set; }
+                        public int Capacity { get; private set; }
+                        private int _index = 0;
+                        private readonly T[] _buffer;
+        
+                        public CircularBuffer(int size)
+                        {
+                            Capacity = size;
+                            _buffer = new T[size];
+                        }
+        
+                        public IEnumerator GetEnumerator()
+                        {
+                            return new CircularBufferEnumerator(this);
+                        }
+        
+                        public void Add(T t)
+                        {
+                            if (Count < Capacity) 
+                            { 
+                                _buffer[Count]=t; Count++; 
+                            } 
+                            else 
+                            { 
+                                _buffer[_index]=t; 
+                                _index=(_index + 1) % Capacity; 
+                            } 
+                        } 
+                        
+                        public void AddRange(IEnumerable<T> collection)
+                        {
+                            foreach (T t in collection)
+                            {
+                                Add(t);
+                            }
+                        }
+    
+                        public T this[int indexOffset]
+                        {
+                            get => _buffer[(_index + indexOffset) % Capacity];
+                        }
+                    }
+            </div>
+        </div>
     </div>
 
-        <script src="/jquery-3.3.1.js"></script>
-        <script src="/Scripts/Site.js"></script>
-        <script src="/Scripts/ResourcesPage.js"></script>
+    <script src="/jquery-3.3.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=cs;autorun=true"></script>
+    <script src="/Scripts/Site.js"></script>
+    <script src="/Scripts/ResourcesPage.js"></script>
 </body>
 </html>

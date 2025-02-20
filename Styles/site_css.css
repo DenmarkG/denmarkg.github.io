@@ -11,6 +11,16 @@
 	margin-top: 10vh;
 }
 
+.main-centered
+{
+	margin-top: 15vh;
+	margin-left: 10vw;
+	margin-right: 10vw;
+	align-items: center;
+	display: flex;
+	flex-grow: 1;
+}
+
 .nav
 {
 	display: flex;
@@ -161,6 +171,38 @@
 .lock
 {
 	overflow-y: hidden;
+}
+
+.code
+{
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.code-header
+{
+	width: 100%;
+	align-items: center;
+	text-align: center;
+	justify-content: space-around;
+}
+
+.code-content
+{
+	width: 100%;
+}
+
+.code-caption
+{
+	justify-content: space-around;
+	width: 100%;
+	padding: 10px;
+	color: white;
+	background-color: #AAD6E3;
+	flex-grow: 1;
 }
 
 @keyframes navLinkFade 
