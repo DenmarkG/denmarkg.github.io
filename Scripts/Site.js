@@ -48,9 +48,36 @@ async function loadHeader() {
     header.innerHTML = txt;
 }
 
-async function initSite() {
+
+function collapseSections()
+{
+    var collection = document.getElementsByClassName("collapsible");
+    for (let i = 0; i < collection.length; i++) 
+    {
+        collection[i].addEventListener("click", function ()
+        {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            
+            if (content.style.maxHeight) 
+            {
+                content.style.maxHeight = null;
+            }
+            else 
+            {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+
+            console.log("clicked");
+        });
+    }
+}
+
+async function initSite() 
+{
     await loadHeader();
     navSlide();
+    collapseSections();
 }
 
 initSite();

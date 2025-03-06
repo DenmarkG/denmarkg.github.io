@@ -12,6 +12,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="/Styles/site_css.css" type="text/css" />
     <link rel="stylesheet" href="/Styles/Index.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/google-code-prettify/prettify.css">
 </head>
 <body onload="PR.prettyPrint()">
     <div id="Header">
@@ -41,89 +42,87 @@
                 </div>
             </div>
             <div class="code-content">
-                <pre class="prettyprint">
-                    public class CircularBuffer<T> : IEnumerable
-                    {
-                        public struct CircularBufferEnumerator : IEnumerator<T>
+                <button type="button" class="collapsible">Expand</button>
+                <div class="container code-container">
+                    <pre class="prettyprint">
+                        public class CircularBuffer<T> : IEnumerable
                         {
-                            private CircularBuffer<T> _buffer;
-                            private int _currentIndex;
-                            
-                            public T Current => _buffer[_currentIndex];
-                            object IEnumerator.Current => _buffer[_currentIndex];
-                
-                            public CircularBufferEnumerator(CircularBuffer<T> circularBuffer)
+                            public struct CircularBufferEnumerator : IEnumerator<T>
                             {
-                                _buffer = circularBuffer;
-                                _currentIndex = -1;
+                                private CircularBuffer<T> _buffer;
+                                private int _currentIndex;
+                    
+                                public T Current => _buffer[_currentIndex];
+                                object IEnumerator.Current => _buffer[_currentIndex];
+                    
+                                public CircularBufferEnumerator(CircularBuffer<T> circularBuffer)
+                                {
+                                    _buffer = circularBuffer;
+                                    _currentIndex = -1;
+                                }
+                                public void Dispose()
+                                {
+                                    _buffer = null;
+                                    System.GC.SuppressFinalize(this);
+                                }
+                                public bool MoveNext()
+                                {
+                                    ++_currentIndex;
+                                    return !(_currentIndex >= _buffer.Capacity);
+                                }
+                                public void Reset()
+                                {
+                                    _currentIndex = -1;
+                                }
                             }
-            
-                            public void Dispose()
+                    
+                            public int Count { get; private set; }
+                            public int Capacity { get; private set; }
+                            private int _index = 0;
+                            private readonly T[] _buffer;
+                            public CircularBuffer(int size)
                             {
-                                _buffer = null;
-                                System.GC.SuppressFinalize(this);
+                                Capacity = size;
+                                _buffer = new T[size];
                             }
-            
-                            public bool MoveNext()
+                            public IEnumerator GetEnumerator()
                             {
-                                ++_currentIndex;
-                                return !(_currentIndex >= _buffer.Capacity);
+                                return new CircularBufferEnumerator(this);
                             }
-            
-                            public void Reset()
+                            public void Add(T t)
                             {
-                                _currentIndex = -1;
+                                if (Count < Capacity)
+                                {
+                                    _buffer[Count]=t; Count++;
+                                }
+                                else
+                                {
+                                    _buffer[_index]=t;
+                                    _index=(_index + 1) % Capacity;
+                                }
+                            }
+                    
+                            public void AddRange(IEnumerable<T> collection)
+                            {
+                                foreach (T t in collection)
+                                {
+                                    Add(t);
+                                }
+                            }
+                            public T this[int indexOffset]
+                            {
+                                get => _buffer[(_index + indexOffset) % Capacity];
                             }
                         }
-                
-                        public int Count { get; private set; }
-                        public int Capacity { get; private set; }
-                        private int _index = 0;
-                        private readonly T[] _buffer;
-        
-                        public CircularBuffer(int size)
-                        {
-                            Capacity = size;
-                            _buffer = new T[size];
-                        }
-        
-                        public IEnumerator GetEnumerator()
-                        {
-                            return new CircularBufferEnumerator(this);
-                        }
-        
-                        public void Add(T t)
-                        {
-                            if (Count < Capacity) 
-                            { 
-                                _buffer[Count]=t; Count++; 
-                            } 
-                            else 
-                            { 
-                                _buffer[_index]=t; 
-                                _index=(_index + 1) % Capacity; 
-                            } 
-                        } 
-                        
-                        public void AddRange(IEnumerable<T> collection)
-                        {
-                            foreach (T t in collection)
-                            {
-                                Add(t);
-                            }
-                        }
-    
-                        public T this[int indexOffset]
-                        {
-                            get => _buffer[(_index + indexOffset) % Capacity];
-                        }
-                    }
+                    </pre>
+                </div>
             </div>
         </div>
     </div>
 
     <script src="/jquery-3.3.1.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=cs;autorun=true"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=cs;autorun=true"></script> -->
+    <script type="text/javascript" src="/google-code-prettify/prettify.js?lang=cs;autorun=true"></script>
     <script src="/Scripts/Site.js"></script>
     <script src="/Scripts/ResourcesPage.js"></script>
 </body>
