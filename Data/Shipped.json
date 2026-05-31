@@ -9,6 +9,14 @@
             "Media": "ProEra.html"
         },
         {
+            "Name": "Star Wars",
+            "Subtitle": "Hunters",
+            "Company": "Echtra / Zynga",
+            "Year": 2021,
+            "Img": "/Images/BoxArt/SWHunters.png",
+            "Media": "SWHunters.html"
+        },
+        {
             "Name": "Harry Potter:",
             "Subtitle": "Wizards Unite",
             "Company": "WB Games SF",
