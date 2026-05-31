@@ -1,59 +1,45 @@
-// HeaderAnimation.js
+"use strict";
+// HeaderAnimation.ts
 // Author: Denmark Gibbs
-
-// forward declarations:
-var canvas;
-var innerWidth = $(window).width();
+var _a, _b;
 const heightPercent = .15;
-var innerHeight = $(window).height() * heightPercent;
-var cxt;
-var mCircle;
-var mCircles = [];
-var mCircleRadius = 15;
-var mCircleInitialVelocity = 1;
-
-function Vector(x, y) 
-{
-    this.x = x;
-    this.y = y;
+let canvasWidth = (_a = $(window).width()) !== null && _a !== void 0 ? _a : 0;
+let canvasHeight = ((_b = $(window).height()) !== null && _b !== void 0 ? _b : 0) * heightPercent;
+let cxt;
+let mCircle;
+const mCircles = [];
+const mCircleRadius = 15;
+const mCircleInitialVelocity = 1;
+class Vector {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
 }
-
-function Circle(xPos, yPos, radius)
-{
-    this.speed = mCircleInitialVelocity;
-    this.pos = new Vector(xPos, yPos);
-
-    this.radius = radius;
-
-    this.dir = new Vector(1, 1);
-
-    this.update = function()
-    {
-        innerWidth = $(window).width();
-        innerHeight = $(window).height();
-
-        if ((this.pos.x + this.radius) > innerWidth || this.pos.x - this.radius < 0)
-        {
+class Circle {
+    constructor(xPos, yPos, radius) {
+        this.speed = mCircleInitialVelocity;
+        this.pos = new Vector(xPos, yPos);
+        this.radius = radius;
+        this.dir = new Vector(1, 1);
+    }
+    update() {
+        var _a, _b;
+        canvasWidth = (_a = $(window).width()) !== null && _a !== void 0 ? _a : 0;
+        canvasHeight = (_b = $(window).height()) !== null && _b !== void 0 ? _b : 0;
+        if ((this.pos.x + this.radius) > canvasWidth || this.pos.x - this.radius < 0) {
             this.dir.x = -this.dir.x;
         }
-
-        let h = this.pos.y + this.radius;
-        // console.log('height: ${h}. innerHeight: ${innerHeight}')
-
-        if ((this.pos.y + this.radius) > canvas.height || this.pos.y - this.radius < 0) 
-        {
+        if ((this.pos.y + this.radius) > canvas.height || this.pos.y - this.radius < 0) {
             this.dir.y = -this.dir.y;
-            // console.log('here');
         }
-
         this.pos.x += this.dir.x * this.speed;
         this.pos.y += this.dir.y * this.speed;
-
         this.draw();
     }
-
-    this.draw = function()
-    {
+    draw() {
+        if (!cxt)
+            return;
         cxt.beginPath();
         cxt.arc(this.pos.x, this.pos.y, this.radius, 0, Math.PI * 2, false);
         cxt.strokeStyle = '#419EC2';
@@ -62,63 +48,44 @@ function Circle(xPos, yPos, radius)
         cxt.fill();
     }
 }
-
-function onResize(event)
-{
-    let x = $(window).width();
-    let y = $(window).height() * heightPercent;
-
-    canvas.width = x;
-    canvas.height = y;
+function onResize(_event) {
+    var _a, _b;
+    if (!canvas)
+        return;
+    canvas.width = (_a = $(window).width()) !== null && _a !== void 0 ? _a : 0;
+    canvas.height = ((_b = $(window).height()) !== null && _b !== void 0 ? _b : 0) * heightPercent;
 }
-
-function animate()
-{
+function animate() {
     requestAnimationFrame(animate);
-    if (cxt != undefined && cxt != null)
-    {
+    if (cxt != undefined && cxt != null) {
         cxt.clearRect(0, 0, canvas.width, canvas.height);
-        // mCircle.update();
-
-        let numCircles = mCircles.length;
-        for (i = 0; i < numCircles; ++i)
-        {
+        const numCircles = mCircles.length;
+        for (let i = 0; i < numCircles; ++i) {
             mCircles[i].update();
         }
     }
 }
-
-function GetRandomInBounds(radius)
-{
+function GetRandomInBounds(radius) {
     return Math.floor(Math.random() * (canvas.width - radius)) + radius;
 }
-
-function initHeader()
-{
-    canvas.width = $(window).width();
-    canvas.height = $(window).height() * heightPercent;
-
+function initHeader() {
+    var _a, _b;
+    if (!canvas)
+        return;
+    canvas.width = (_a = $(window).width()) !== null && _a !== void 0 ? _a : 0;
+    canvas.height = ((_b = $(window).height()) !== null && _b !== void 0 ? _b : 0) * heightPercent;
     cxt = canvas.getContext('2d');
-
-    let startX = Math.floor(Math.random() * (canvas.width - mCircleRadius)) + mCircleRadius;
-    let startY = Math.floor(Math.random() * (canvas.height - mCircleRadius)) + mCircleRadius;
-
+    const startX = Math.floor(Math.random() * (canvas.width - mCircleRadius)) + mCircleRadius;
+    const startY = Math.floor(Math.random() * (canvas.height - mCircleRadius)) + mCircleRadius;
     mCircle = new Circle(startX, startY, mCircleRadius);
     mCircles.push(mCircle);
-
-    startX = GetRandomInBounds(mCircleRadius);
-    startY = GetRandomInBounds(mCircleRadius);
-    mCircles.push(new Circle(startX, startY, mCircleRadius));
-    
+    const startX2 = GetRandomInBounds(mCircleRadius);
+    const startY2 = GetRandomInBounds(mCircleRadius);
+    mCircles.push(new Circle(startX2, startY2, mCircleRadius));
     animate();
     window.addEventListener('resize', onResize);
 }
-
-canvas = $('canvas')[0];
-if (canvas != undefined && canvas != null)
-{
+const canvas = $('canvas')[0];
+if (canvas != undefined && canvas != null) {
     $(document).ready(initHeader);
 }
-
-
-

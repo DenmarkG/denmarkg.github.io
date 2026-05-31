@@ -1,69 +1,101 @@
-"use strict";
 console.log("Main.js loaded");
+
 let loaded = false;
-let header;
-let navBar;
-let headerQuery;
-function stickNavBar() {
+
+let header: HTMLElement | null;
+let navBar: HTMLElement | null;
+
+let headerQuery: MediaQueryList;
+
+function stickNavBar(): void
+{
     const nav = $('nav')[0];
-    if (nav !== undefined && nav != null) {
+
+    if (nav !== undefined && nav != null)
+    {
         const stickPos = nav.offsetTop;
-        if (window.pageYOffset > stickPos) {
+
+        if (window.pageYOffset > stickPos)
+        {
             nav.classList.add('fixed-header');
             console.log('header stuck!');
         }
-        else {
+        else
+        {
             nav.classList.remove('fixed-header');
             console.log('header unstuck!');
         }
     }
 }
-function expandInfo(event) {
-    var _a, _b;
+
+function expandInfo(event: MouseEvent): void
+{
     const path = event.composedPath();
-    const coverImage = path[0];
-    const moreText = (_a = coverImage.parentElement) === null || _a === void 0 ? void 0 : _a.querySelector('.read-more');
-    if (moreText != undefined && moreText != null) {
-        const trailer = (_b = coverImage.parentElement) === null || _b === void 0 ? void 0 : _b.querySelector('#trailer');
-        if (moreText.style.display === 'none') {
+    const coverImage = path[0] as HTMLElement;
+    const moreText = coverImage.parentElement?.querySelector('.read-more') as HTMLElement | null;
+
+    if (moreText != undefined && moreText != null)
+    {
+        const trailer = coverImage.parentElement?.querySelector('#trailer') as HTMLElement | null;
+
+        if (moreText.style.display === 'none')
+        {
             moreText.style.display = 'inline';
             console.log('text on');
-            if (trailer != undefined && trailer != null) {
+
+            if (trailer != undefined && trailer != null)
+            {
                 trailer.style.display = 'inline';
                 console.log('trailer on');
             }
         }
-        else {
+        else
+        {
             moreText.style.display = 'none';
-            if (trailer != undefined && trailer != null) {
+
+            if (trailer != undefined && trailer != null)
+            {
                 trailer.style.display = 'none';
                 console.log('trailer off');
             }
         }
     }
 }
-function SetUpExpansions() {
+
+function SetUpExpansions(): void
+{
     // get each div that is a child of art-container
     const divs = $('.art-container').children('div');
-    for (let i = 0; i < divs.length; ++i) {
+
+    for (let i = 0; i < divs.length; ++i)
+    {
         // find the image
         const coverImage = divs.children('img');
         const moreText = divs.find('.read-more');
-        moreText[i].style.display = 'none';
+        (moreText[i] as HTMLElement).style.display = 'none';
+
         // add the onclick function to the image
         coverImage[i].addEventListener('click', expandInfo);
     }
 }
-function Init() {
+
+function Init(): void
+{
     // place the header
     header = document.getElementById('header');
+
     console.log('header loaded');
+
     // make sure the navBar stays in place once it reaches the top
     $(window)[0].addEventListener('scroll', stickNavBar);
+
     // TODO: insert read-more stuff here
     SetUpExpansions();
+
     loaded = true;
 }
-if (!loaded) {
+
+if (!loaded)
+{
     $(document).ready(Init);
 }
